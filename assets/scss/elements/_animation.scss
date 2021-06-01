@@ -1,0 +1,355 @@
+/* || ===
+
+= Basar Labs 2021
+= ANIMATION CLASSES
+
+=== || */
+
+.animated {
+  @include grid-media($medium-up){
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    visibility: hidden;
+
+    .current &{
+        visibility: visible;
+    }
+  }
+    
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  @include grid-media($medium-up){
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  }
+}
+
+
+
+@-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .pulse {
+    @include grid-media($medium-up){
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    }
+  }
+
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    @include grid-media($medium-up){
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    }
+  }
+  
+
+  .fadeInAnim {
+
+    @include grid-media($medium-up){
+
+      opacity: 0;
+      -webkit-transform: translateY(20px) skewX(-8deg);
+              transform: translateY(20px) skewX(-8deg);
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+      -webkit-transition: opacity 0.6s, -webkit-transform 1.4s;
+      transition: opacity 0.6s, -webkit-transform 1.2s;
+      transition: opacity 0.6s, transform 1.4s;
+      transition: opacity 0.6s, transform 1.4s, -webkit-transform 1.4s;
+      will-change: opacity, transform;
+
+    }
+
+  }
+
+  .fadeInAnimActive{
+    @include grid-media($medium-up){
+        opacity: 1;
+        -webkit-transform: none;
+                transform: none;
+    }
+  }
+  
+  @-webkit-keyframes bounce {
+    0%{-webkit-transform: translateY(0);}	
+    50% {-webkit-transform: translateY(-5px);}
+  }
+   
+  @-moz-keyframes bounce {
+    0%{-webkit-transform: translateY(0);}	
+    50% {-webkit-transform: translateY(-5px);}
+  }
+   
+  @-o-keyframes bounce {
+    0%{-webkit-transform: translateY(0);}	
+    50% {-webkit-transform: translateY(-5px);}
+  }
+  @keyframes bounce {
+    0%{-webkit-transform: translateY(0);}	
+    50% {-webkit-transform: translateY(-5px);}
+  }
+
+
+
+
+  // Mouse Icon Animation .. 
+
+  $widthMouse: 26px;
+  $heightMouse: 42px;
+  $borderMouse: 6px;
+  
+  $posMouse: 8px;
+  $posText: 2px;
+  
+  $sizeTrackball: 6px;
+  $posTrackball: 20px;
+  $shrinkTrackball: 0.4;
+  
+  $animDuration: 5s;
+  
+  @mixin bgGradient {
+    background:
+      colors(silver)
+      linear-gradient(
+        transparent 0%,
+        transparent 50%,
+        colors(white) 50%,
+        colors(white)  100%
+      );
+  }
+  
+  .mouse {
+    @include bgGradient;
+    position: relative;
+    width: $widthMouse;
+    height: $heightMouse;
+    border-radius: 100px;
+    background-size: 100% 200%;
+    @extend .dis-block;
+    animation: 
+      colorSlide $animDuration linear infinite,
+      nudgeMouse $animDuration ease-out infinite;
+    &:before,
+    &:after {
+      content:"";
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      margin: auto;
+      font-size: 0px;
+    }
+    &:before {
+      width: $widthMouse - $borderMouse;
+      height: $heightMouse - $borderMouse;
+      background-color: colors(brand);
+      border-radius: 100px;
+    }
+    &:after {
+      background-color: colors(white);
+      width: $sizeTrackball;
+      height: $sizeTrackball;
+      border-radius: 100%;
+      animation: trackBallSlide $animDuration linear infinite;
+    }
+  }
+  
+  @keyframes colorSlide { 
+    0% { background-position: 0% 100%; }
+    20% { background-position: 0% 0%; }
+    21% { background-color: colors(cloud); }
+    29.99% { 
+      background-color: colors(white);
+      background-position: 0% 0%;
+    }
+    30% { 
+      background-color: colors(cloud);
+      background-position: 0% 100%;
+    }
+    50% { background-position: 0% 0%; }
+    51% { background-color: colors(cloud); }
+    59% { 
+      background-color: colors(white);
+      background-position: 0% 0%;
+    }
+    60% { 
+      background-color: colors(cloud);
+      background-position: 0% 100%;
+    }
+    80% { background-position: 0% 0%; }
+    81% { background-color: colors(cloud); }
+    90%, 100% { background-color: colors(white); }
+  }
+  
+  @keyframes trackBallSlide {
+    0% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    6% { 
+      opacity: 1;
+      transform: scale(0.9) translateY($posTrackball/4);
+    }
+    14% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY($posTrackball*2);
+    }
+    15%, 19% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY(-$posTrackball);
+    }
+    28%, 29.99% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    36% { 
+      opacity: 1;
+      transform: scale(0.9) translateY($posTrackball/4);
+    }
+    44% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY($posTrackball*2);
+    }
+    45%, 49% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY(-$posTrackball);
+    }
+    58%, 59.99% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    66% { 
+      opacity: 1;
+      transform: scale(0.9) translateY($posTrackball/4);
+    }
+    74% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY($posTrackball*2);
+    }
+    75%, 79% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY(-$posTrackball);
+    }
+    88%, 100% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+  }
+  
+  @keyframes nudgeMouse {
+    0% { transform: translateY(0); }
+    20% { transform: translateY($posMouse); }
+    30% { transform: translateY(0); }
+    50% { transform: translateY($posMouse); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY($posMouse); }
+    90% { transform: translateY(0); }
+  }
+  
+  @keyframes nudgeText {
+    0% { transform: translateY(0); }
+    20% { transform: translateY($posText); }
+    30% { transform: translateY(0); }
+    50% { transform: translateY($posText); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY($posText); }
+    90% { transform: translateY(0); }
+  }
+  
+  @keyframes colorText { 
+    21% { color: colors(cloud); }
+    30% { color: colors(white); }
+    51% { color: colors(cloud); }
+    60% { color: colors(white); }
+    81% { color: colors(cloud); }
+    90% { color: colors(white); }
+  }

@@ -1,0 +1,53 @@
+/* || ===
+
+    = Basar Labs 2021
+
+=== || */
+html{
+    border-right: $base-height solid colors(brand) !important;
+    &:hover{
+        border-right: $base-height solid colors(brand) !important;
+    }
+    height: 100vh;
+}
+body{
+    background-image: url(../imgs/bg_image.svg);
+    background-position: left top;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+#soon{
+    @include middle-layout();
+    @extend .glob-padding;
+    height: calc(100vh - 200px);
+
+    .logo{
+        width: 120px;
+        @include grid-media($large-up){
+            width: 200px;
+        }
+    }
+
+    h2{
+        max-width: 700px;
+    }
+
+    h3{
+        @extend .md-mar-bottom;
+
+        i{
+            @extend .txt-xl;
+            display: inline-block;
+            position: relative;
+            top: 5px;
+            @extend .txt-brand;
+        }
+    }
+    input{
+        @extend .md-mar-left;
+    }
+    footer{
+        @extend .lr-padding-top;
+        @extend .w100;
+    }
+}

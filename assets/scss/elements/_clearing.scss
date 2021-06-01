@@ -1,0 +1,81 @@
+/* || ===
+
+= Basar Labs 2021
+= CLEARING & SPACING
+
+=== || */
+
+      // Padding .. 
+      @import 'spacing/padding';
+
+      // Margins ..
+      @import 'spacing/margin';
+
+
+      // Hide and show .. 
+      .hide{
+        display: none;
+      }
+      
+      // Location ..
+      .bx-center{
+        margin: auto;
+        float: none ;
+      }
+      .bx-left{
+        float: left ;
+      }
+      .bx-right{
+        float: right ;
+      }
+
+        // full width
+        .f-width{
+          width: 100%;
+          max-width: 100%;
+
+        }
+        .half-width{
+          width: 100%;
+          @include grid-media($large-up){
+            width: 50%;
+          }
+        }
+
+        // Max width 
+        .max50{
+          max-width: 50%;
+        }
+        .max60{
+          max-width: 60%;
+        }
+        .max70{
+          max-width: 70%;
+        }
+        .max80{
+          max-width: 80%;
+        }
+        .max90{
+          max-width: 90%
+        }
+        .w80{
+          width: 80%;
+        }
+        .w100{
+          width: 100%;
+        }
+
+        // Same-hight ..
+        .same-height{ 
+          display: inline-block;
+          @include grid-media($large-up){
+          display: table; 
+          }
+          width: 100%; 
+          .col { 
+            display: table-cell; 
+          }
+        }
+        
+
+      

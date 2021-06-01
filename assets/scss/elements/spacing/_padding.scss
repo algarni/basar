@@ -1,0 +1,154 @@
+/* || ===
+
+= Basar Labs 2021
+= CLEARING & SPACING // Padding
+
+=== || */
+
+        // Global ..
+        .no-padding{
+            padding: 0;
+          }
+          .sm-padding{
+            padding: whitespace(sm);
+          }
+          .md-padding{
+            padding: whitespace(md);
+          }
+          .lr-padding{
+            padding: whitespace(lr);
+          }
+          .xl-padding{
+            padding: whitespace(xl);
+          }
+  
+              // Global padding
+              .glob-padding{
+                @include global-padding();
+                
+                &.no-padding-top{
+                  padding-top: 0px;
+                }
+              }
+              .glob-hor-padding{
+                @include hor-padding(3,6,12);
+              }
+              .glob-ver-padding{
+                @include ver-padding(3,6,12, false);
+              }
+  
+              // No padding ..
+              .no-padding-bottom{
+                padding-bottom: 0px;
+              }
+              .no-padding-top{
+                padding-top: 0px;
+              }
+              .no-padding-left{
+                padding-left: 0px;
+              }
+              .no-padding-right{
+                padding-right: 0px;
+              }
+  
+              //  padding top ..
+              .xs-padding-top{
+                padding-top: whitespace(sm)/2;
+              }
+              .sm-padding-top{
+                padding-top: whitespace(sm);
+              }
+              .md-padding-top{
+                padding-top: whitespace(md);
+              }
+              .lr-padding-top{
+                padding-top: whitespace(lr);
+              }
+              .xl-padding-top{
+                padding-top: whitespace(xl);
+              }        
+  
+              //  padding bottom ..
+              .xs-padding-bottom{
+                padding-bottom: whitespace(sm)/2;
+              }
+              .sm-padding-bottom{
+                padding-bottom: whitespace(sm);
+              }
+              .md-padding-bottom{
+                padding-bottom: whitespace(md);
+              }
+              .lr-padding-bottom{
+                padding-bottom: whitespace(lr);
+              }
+              .xl-padding-bottom{
+                padding-bottom: whitespace(xl);
+              }
+  
+              //  padding left ..
+              .xs-padding-left{
+                padding-left: whitespace(sm)/2;
+              }
+              .sm-padding-left{
+                padding-left: whitespace(sm);
+              }
+              .md-padding-left{
+                padding-left: whitespace(md);
+              }
+              .lr-padding-left{
+                padding-left: whitespace(lr);
+              }
+              .xl-padding-left{
+                padding-left: whitespace(xl);
+              }
+  
+              //  padding Right ..
+              .xs-padding-right{
+                padding-right: whitespace(sm)/2;
+              }
+              .sm-padding-right{
+                padding-right: whitespace(sm);
+              }
+              .md-padding-right{
+                padding-right: whitespace(md);
+              }
+              .lr-padding-right{
+                padding-right: whitespace(lr);
+              }
+              .xl-padding-right{
+                padding-right: whitespace(xl);
+              }
+  
+              // Vertical Only ..
+              .lr-ver-padding{
+                  @include ver-padding(6,12,16, false);
+                  &.hlf-btm{
+                      @include ver-padding(6,12,16, true);
+                  }
+              }
+              .md-ver-padding{
+                  @include ver-padding(3,6,12, false);
+                  &.hlf-btm{
+                      @include ver-padding(3,6,12, true);
+                  }
+              }
+              .sm-ver-padding{
+                  @include ver-padding(1.5,3,6, false);
+                  &.hlf-btm{
+                      @include ver-padding(1.5,3,6, true);
+                  }
+                  &.sm-btn{
+                    @include ver-padding(1,2,4, false);
+                  }
+              }
+  
+              // Horizontal Only ..
+              .lr-hor-padding{
+                  @include hor-padding(6,12,16);
+              }
+              .md-hor-padding{
+                  @include hor-padding(3,6,12);
+              }
+              .sm-hor-padding{
+                  @include hor-padding(1.5,3,6);
+              }

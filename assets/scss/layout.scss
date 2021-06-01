@@ -1,0 +1,140 @@
+/* || ===
+
+        = Basar Labs 2021
+
+        ===================
+        ||    CONTENT    ||
+        ===================
+
+                || BASIC
+                =========
+
+                01. Normalize
+                02. Neat
+                03. Variables
+                04. RWD
+                05. Mixnins
+                06. Shared
+
+                || ELEMENTS
+                ===========
+
+                06. Colors
+                07. Fonts
+                08. Typography
+                09. Icons
+                10. Visibility
+                11. Buttons
+                12. Tooltip
+                13. Loader
+                14. List
+                15. Images
+                16. Embade
+                17. Clearing
+                18. Divider
+                19. Effects
+                20. Quote
+
+                || COMPONENTS
+                =============
+
+                20. Header
+                21. Footer
+                22. Alerts
+                23. Message Box
+                24. Modal
+                25. Dropdown
+                26. Tabs
+                27. Forms
+                28. Cards
+                29. Item List
+                23. Feeds
+                31. Cart
+                32. Progress Bar
+                33. Sections
+                34. Featured
+                35. Blog
+
+                || 3rd PART PLUGINS
+                =====================
+                34. Animation
+
+
+=== || */
+
+                
+                // Basic Call
+                @import 'basic/normalize';
+                @import 'vendor/neat/neat';
+                @import 'basic/variables';
+                @import 'basic/mixins';
+                @import 'basic/shared';
+                
+                
+                // Elements Call
+                //@import 'elements/animation';
+                @import 'elements/colors';
+                @import 'elements/typo';
+                @import 'elements/icons/icons';
+                @import 'elements/fonts';
+                @import 'elements/visibility';
+                @import 'elements/buttons';
+                //@import 'elements/tooltip';
+                @import 'elements/loader';
+                //@import 'elements/list';
+                //@import 'elements/media';
+                @import 'elements/clearing';
+                //@import 'elements/effects';
+                //@import 'elements/quote';
+                @import 'elements/social';
+                
+                // Components Call
+                @import 'components/headers';
+                @import 'components/alerts';
+                //@import 'components/tabs';
+                @import 'components/forms';
+                //@import 'components/cards';
+                @import 'components/footers';
+                //@import 'components/table';
+                //@import 'components/featured';
+                //@import 'components/items_list';
+                //@import 'components/css-partials/style'
+                
+                
+                /* || ===
+                
+                = Dedicated Pages Layout
+                
+                ===================
+                ||    CONTENT    ||
+                ===================
+                
+                01. Soon
+                
+                
+                === || */
+                
+                @import 'pages/soon';
+                
+                
+                
+                /* || ===
+                
+                = HOT FIXES ..
+                
+                ===================
+                ||    CONTENT    ||
+                ===================
+                
+                01. WINDOWS
+                02. MAC
+                
+                
+                
+                === || */
+                
+                //@import 'hotfix/windows';
+                @import 'hotfix/mac';
+                //@import 'hotfix/mobile';
+                //@import 'hotfix/rtl';
+                

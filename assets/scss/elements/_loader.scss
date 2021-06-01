@@ -1,0 +1,16 @@
+/* || ===
+
+= Basar Labs 2021
+= LOADERS
+
+=== || */
+
+#progressIndicator {
+  position: fixed;
+  width: 100%;
+  height: whitespace(sm)/4;
+  top: 0;
+  transform: translateX(-100%);
+  background-color: colors(brand);
+  z-index: 99;
+}

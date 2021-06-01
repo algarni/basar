@@ -1,0 +1,182 @@
+/* || ===
+
+= Basar Labs 2021
+= TYPOGRAPHY
+
+=== || */
+
+
+// Shared ..
+    *{
+        font-weight: normal;
+        font-family: fonts(normal);
+    }
+
+    body{
+        font-size: font-size(sm);
+        line-height: 150%;
+        font-weight: 400;
+    }
+    
+    // Numbers ..
+    .txt-num{
+        font-family: 'Monoton', cursive;
+    }
+    .txt-normal{
+        font-family: fonts(normal);
+    }
+
+    // Charchters layout ..
+        .txt-upper{
+            text-transform: uppercase;
+        }
+        .txt-italic{
+            font-style: italic;
+        }
+
+
+    // Font wights ..
+        .txt-light{
+            font-weight: weight(normal);
+        }
+        .txt-medium{
+            font-weight: weight(medium);
+        }
+        .txt-regular{
+            font-weight: weight(normal);
+        }
+        .txt-bold{
+            font-weight: weight(bold);
+        }
+
+    // A Color ..
+        a{
+            color: colors(brand);
+
+            &:hover{
+                color: colors(brand);
+            }
+        }
+
+    // Heading ..
+        h1, h2, h3, h4, h5, h6, .txt-heading{
+            margin: 0px;
+            font-family: fonts(heading);
+            *{
+                font-family: fonts(heading);
+            }
+        }
+        /*
+        h1{
+            color: colors(black);
+            *{
+                color: colors(black);
+            }
+        }
+        */
+
+    // Font Size ..
+        .txt-xs{
+            font-size: font-size(xs);
+            line-height: 150%;
+            font-weight: weight(normal);
+        }
+        .txt-sm{
+            font-size: font-size(sm);
+            line-height: 150%;
+            font-weight: weight(normal);
+        }
+        .txt-md, h3{
+            font-size: font-size(md);
+            line-height: 150%;
+            font-weight: weight(normal);
+        }
+        .txt-lr, h2{
+            font-weight: weight(normal);
+            font-size: font-size(lr);
+            line-height: 150%;
+        }
+        .txt-xl,h1{
+            font-weight: weight(normal);
+            font-size: font-size(xl);
+            line-height: 150%;
+            margin-bottom: #{whitespace(sm)/2};
+        }
+        .txt-xxl{
+            font-weight: weight(normal);
+            font-size: font-size(xxl);
+            line-height: 150%;
+            margin-bottom: #{whitespace(sm)};
+        }
+
+
+    // LINE-HGIHT ..
+        .sm-lh{
+            line-height: whitespace(sm) ;
+        }
+        .md-lh{
+            line-height: calc(#{whitespace(lr)} - 30px) ;
+        }
+        .lr-lh{
+            line-height: calc(#{whitespace(lr)} - 10px) ;
+        }
+
+
+    // Text Align ..
+        .txt-center{
+            text-align: center;
+        }
+        .txt-left{
+            text-align: left;
+        }
+        .txt-right{
+            text-align: right;
+        }
+
+
+    // Special heading ..
+        .txt-special{
+            //font-family: fonts(deco);
+            font-size: 146pt;
+            background: gr(one);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        // Hor- text ..
+        .hor-text{
+            text-transform: uppercase;
+            font-weight: 400;
+             @include grid-media($medium-only){
+                -webkit-writing-mode: vertical-lr;
+                -ms-writing-mode: tb-lr;
+                writing-mode: vertical-lr;
+                text-orientation: mixed;
+                transform: rotate(180deg);
+            }                
+        }
+
+
+        // Over dots .. 
+        .over-dots{
+            overflow:hidden;
+            display:inline-block;
+            text-overflow: ellipsis;
+
+            &.oneline{
+                white-space: nowrap;                
+            }
+        }
+        .txt-underline{
+            text-decoration: underline;
+        }
+
+        // SM Padding top
+        .sm-pad-top-fix{
+            padding-top:110px;
+             @include grid-media($medium-only){
+                padding-top:0px;
+			}
+        }

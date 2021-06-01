@@ -1,0 +1,60 @@
+/* || ===
+
+= Basar Labs 2021
+= VISIBILTY
+
+=== || */
+
+
+  // Displays
+    .dis-block{
+      display: block;
+    }
+
+    .dis-inline{
+      display: inline;
+    }
+
+    .dis-inline-block{
+      display: inline-block;
+    }
+
+    .dis-none{
+      display: none;
+    }
+
+    .visible{
+      visibility: visible ;
+    }
+
+    .nvisible{
+      visibility: hidden;
+    }
+
+
+
+
+
+  // Overflow
+    .over-hidden{
+        overflow: hidden;
+    }
+
+
+
+
+
+  // relative index .
+    .relative-index{
+      position: relative;
+      z-index: 7;
+    }
+
+    .relative-index-2{
+      position: relative;
+      z-index: 4;
+    }
+
+
+
+

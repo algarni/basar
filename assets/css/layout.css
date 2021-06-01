@@ -1,0 +1,5616 @@
+@charset "UTF-8";
+/* || ===
+
+        = Basar Labs 2021
+
+        ===================
+        ||    CONTENT    ||
+        ===================
+
+                || BASIC
+                =========
+
+                01. Normalize
+                02. Neat
+                03. Variables
+                04. RWD
+                05. Mixnins
+                06. Shared
+
+                || ELEMENTS
+                ===========
+
+                06. Colors
+                07. Fonts
+                08. Typography
+                09. Icons
+                10. Visibility
+                11. Buttons
+                12. Tooltip
+                13. Loader
+                14. List
+                15. Images
+                16. Embade
+                17. Clearing
+                18. Divider
+                19. Effects
+                20. Quote
+
+                || COMPONENTS
+                =============
+
+                20. Header
+                21. Footer
+                22. Alerts
+                23. Message Box
+                24. Modal
+                25. Dropdown
+                26. Tabs
+                27. Forms
+                28. Cards
+                29. Item List
+                23. Feeds
+                31. Cart
+                32. Progress Bar
+                33. Sections
+                34. Featured
+                35. Blog
+
+                || 3rd PART PLUGINS
+                =====================
+                34. Animation
+
+
+=== || */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+/* || ===
+
+= Basar Labs 2021
+= APP CUSTOM STYLE
+
+=== || */
+/* || ===
+
+= Basar Labs 2021
+= MIXINS
+
+=== || */
+/* || ===
+
+= Basar Labs 2021
+= SHARED CLASSES
+
+=== || */
+body, html {
+  font-family: "IBM Plex Sans Arabic";
+  text-align: right;
+  padding: 0px;
+  margin: 0px;
+  color: #090817;
+  width: 100%;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  min-height: 95vh; }
+
+.no-scroll {
+  overflow: hidden; }
+
+::selection {
+  background: #090817;
+  color: #fff; }
+
+::-moz-selection {
+  background: #090817;
+  color: #fff; }
+
+main {
+  height: 101%; }
+
+* {
+  box-sizing: border-box;
+  font-weight: 400;
+  text-decoration: none; }
+
+p, q {
+  line-height: 130%; }
+  p h1, q h1 {
+    line-height: initial; }
+
+.row {
+  margin: 0 auto; }
+
+*:focus, *:hover {
+  outline: 0;
+  text-decoration: none;
+  border: 0; }
+
+.cover-bg {
+  background-attachment: fixed;
+  background-size: cover; }
+
+figure {
+  margin: 0; }
+
+.over-hidden {
+  overflow: hidden; }
+
+.middle-layout {
+  display: table;
+  height: 100%; }
+  .middle-layout .table-cell, .middle-layout .content, .middle-layout .fp-tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 0;
+    position: relative; }
+
+.underline {
+  background-image: linear-gradient(180deg, transparent 65%, #5862CA 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -ms-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  transition: 0.4s ease; }
+  .underline.active, .underline:hover {
+    color: #19AF94;
+    background-size: 100% 100%; }
+  .underline.white {
+    background-image: linear-gradient(180deg, transparent 65%, #fff 0); }
+
+.a_underline {
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 3px 3px; }
+
+.a_underline:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23FCC14A' stroke-width='4' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-size: auto 10px;
+  background-repeat: repeat-x; }
+
+.bg_fulled_hover {
+  background: linear-gradient(#19AF94, #19AF94);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: all 0.2s cubic-bezier(0.86, 0, 0.07, 1); }
+  .bg_fulled_hover.pb {
+    margin-left: -0.625rem; }
+  .bg_fulled_hover:hover {
+    color: #090817;
+    background-size: 100% 100%; }
+  .bg_fulled_hover.black {
+    background: linear-gradient(#090817, #090817); }
+    .bg_fulled_hover.black:hover {
+      color: #19AF94; }
+
+.hide {
+  display: none !important; }
+
+.behind-header {
+  margin-top: 5rem; }
+
+.dwn-space {
+  margin-bottom: 94px; }
+
+/* || ===
+
+= Basar Labs 2021
+= COLORING
+
+=== || */
+.txt-brand, #soon h3 i {
+  color: #19AF94; }
+
+.txt-brand2 {
+  color: #5862CA; }
+
+.txt-cloud {
+  color: #F8F9F9; }
+
+.txt-silver {
+  color: #EDEFF0; }
+
+.txt-asphalt {
+  color: #5B6268; }
+
+.txt-black {
+  color: #090817; }
+
+.txt-mdblue {
+  color: #32304D; }
+
+.txt-green {
+  color: #86C282; }
+
+.txt-orange {
+  color: #EE7348; }
+
+.txt-yellow {
+  color: #FADD60; }
+
+.txt-red {
+  color: #C82A27; }
+
+.txt-white {
+  color: #fff; }
+
+.txt-gr, .btn.vertical:hover i, .btn.full-width:hover i {
+  background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+  .txt-gr span, .btn.vertical:hover i span, .btn.full-width:hover i span {
+    background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+.txt-brand-hvr:hover {
+  color: #19AF94; }
+  .txt-brand-hvr:hover * {
+    color: #19AF94; }
+
+.txt-brand2-hvr:hover {
+  color: #5862CA; }
+  .txt-brand2-hvr:hover * {
+    color: #5862CA; }
+
+.txt-silver-hvr:hover {
+  color: #EDEFF0; }
+  .txt-silver-hvr:hover * {
+    color: #EDEFF0; }
+
+.txt-cloud-hvr:hover {
+  color: #F8F9F9; }
+  .txt-cloud-hvr:hover * {
+    color: #F8F9F9; }
+
+.txt-asphalt-hvr:hover {
+  color: #5B6268; }
+  .txt-asphalt-hvr:hover * {
+    color: #5B6268; }
+
+.txt-black-hvr:hover {
+  color: #090817; }
+  .txt-black-hvr:hover * {
+    color: #090817; }
+
+.txt-mdblue-hvr:hover {
+  color: #32304D; }
+  .txt-mdblue-hvr:hover * {
+    color: #32304D; }
+
+.txt-green-hvr:hover {
+  color: #86C282; }
+  .txt-green-hvr:hover * {
+    color: #86C282; }
+
+.txt-red-hvr:hover {
+  color: #C82A27; }
+  .txt-red-hvr:hover * {
+    color: #C82A27; }
+
+.txt-white-hvr:hover {
+  color: #fff; }
+  .txt-white-hvr:hover * {
+    color: #fff; }
+
+.bg-brand {
+  background: #19AF94; }
+  .bg-brand .scroll-btn:hover i {
+    background: #fff; }
+  .bg-brand .with-plus:hover:after, .bg-brand .with-plus.active:after {
+    color: #090817; }
+  .bg-brand .filters-cat h4:before {
+    background: #fff; }
+  .bg-brand .filters-cat ul li a {
+    color: #090817; }
+    .bg-brand .filters-cat ul li a:hover {
+      color: #fff; }
+
+.bg-brand2 {
+  background: #5862CA; }
+
+.bg-cloud {
+  background: #F8F9F9; }
+
+.bg-silver {
+  background: #EDEFF0; }
+
+.bg-asphalt {
+  background: #5B6268; }
+
+.bg-black {
+  background: #090817; }
+
+.bg-mdblue {
+  background: #32304D; }
+
+.bg-green {
+  background: #86C282; }
+
+.bg-red {
+  background: #C82A27; }
+
+.bg-orange {
+  background: #EE7348; }
+
+.bg-yellow {
+  background: #FADD60; }
+
+.bg-none {
+  background: transparent; }
+
+.bg-white {
+  background: #fff; }
+
+.bg-gr {
+  background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%); }
+
+.bg-brand-hvr:hover {
+  background: #19AF94; }
+
+.bg-brand2-hvr:hover {
+  background: #5862CA; }
+
+.bg-cloud-hvr:hover {
+  background: #F8F9F9; }
+
+.bg-silver-hvr:hover {
+  background: #EDEFF0; }
+
+.bg-asphalt-hvr:hover {
+  background: #5B6268; }
+
+.bg-black-hvr:hover {
+  background: #090817; }
+
+.bg-black-hvr:hover {
+  background: #32304D; }
+
+.bg-green-hvr:hover {
+  background: #86C282; }
+
+.bg-red-hvr:hover {
+  background: #C82A27; }
+
+.bg-none-hvr:hover {
+  background: transparent; }
+
+.bg-white-hvr:hover {
+  background: #fff; }
+
+.brd-brand {
+  box-shadow: inset 0px 0px 0px 3px #19AF94; }
+  .brd-brand:hover {
+    transition: all 0.5s; }
+
+.brd-gr {
+  box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0); }
+  .brd-gr:hover {
+    transition: all 0.5s; }
+
+.brd-cloud {
+  box-shadow: inset 0px 0px 0px 3px #F8F9F9; }
+  .brd-cloud:hover {
+    transition: all 0.5s; }
+
+.brd-silver {
+  box-shadow: inset 0px 0px 0px 3px #EDEFF0; }
+  .brd-silver:hover {
+    transition: all 0.5s; }
+
+.brd-asphalt {
+  box-shadow: inset 0px 0px 0px 3px #5B6268; }
+  .brd-asphalt:hover {
+    transition: all 0.5s; }
+
+.brd-black {
+  box-shadow: inset 0px 0px 0px 3px #090817; }
+  .brd-black:hover {
+    transition: all 0.5s; }
+
+.brd-mdblue {
+  box-shadow: inset 0px 0px 0px 3px #32304D; }
+  .brd-mdblue:hover {
+    transition: all 0.5s; }
+
+.brd-green {
+  box-shadow: inset 0px 0px 0px 3px #86C282; }
+  .brd-green:hover {
+    transition: all 0.5s; }
+
+.brd-red {
+  box-shadow: inset 0px 0px 0px 3px #C82A27; }
+  .brd-red:hover {
+    transition: all 0.5s; }
+
+.brd-orange {
+  box-shadow: inset 0px 0px 0px 3px #EE7348; }
+  .brd-orange:hover {
+    transition: all 0.5s; }
+
+.brd-yellow {
+  box-shadow: inset 0px 0px 0px 3px #FADD60; }
+  .brd-yellow:hover {
+    transition: all 0.5s; }
+
+.brd-white {
+  box-shadow: inset 0px 0px 0px 3px #fff; }
+  .brd-white:hover {
+    transition: all 0.5s; }
+
+.brd-hvr-brand:hover {
+  box-shadow: inset 0px 0px 0px 100px #19AF94; }
+
+.brd-hvr-cloud:hover {
+  box-shadow: inset 0px 0px 0px 100px #F8F9F9; }
+
+.brd-hvr-silver:hover {
+  box-shadow: inset 0px 0px 0px 100px #EDEFF0; }
+
+.brd-hvr-asphalt:hover {
+  box-shadow: inset 0px 0px 0px 100px #5B6268; }
+
+.brd-hvr-black:hover {
+  box-shadow: inset 0px 0px 0px 100px #090817; }
+
+.brd-hvr-mdblue:hover {
+  box-shadow: inset 0px 0px 0px 100px #32304D; }
+
+.brd-hvr-green:hover {
+  box-shadow: inset 0px 0px 0px 100px #86C282; }
+
+.brd-hvr-red:hover {
+  box-shadow: inset 0px 0px 0px 100px #C82A27; }
+
+.brd-hvr-orange:hover {
+  box-shadow: inset 0px 0px 0px 100px #EE7348; }
+
+.brd-hvr-yellow:hover {
+  box-shadow: inset 0px 0px 0px 100px #FADD60; }
+
+.brd-hvr-white:hover {
+  box-shadow: inset 0px 0px 0px 100px #fff; }
+
+/* || ===
+
+= Basar Labs 2021
+= TYPOGRAPHY
+
+=== || */
+* {
+  font-weight: normal;
+  font-family: "IBM Plex Sans Arabic"; }
+
+body {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400; }
+
+.txt-num {
+  font-family: 'Monoton', cursive; }
+
+.txt-normal {
+  font-family: "IBM Plex Sans Arabic"; }
+
+.txt-upper {
+  text-transform: uppercase; }
+
+.txt-italic {
+  font-style: italic; }
+
+.txt-light {
+  font-weight: 400; }
+
+.txt-medium {
+  font-weight: 500; }
+
+.txt-regular {
+  font-weight: 400; }
+
+.txt-bold {
+  font-weight: 600; }
+
+a {
+  color: #19AF94; }
+  a:hover {
+    color: #19AF94; }
+
+h1, h2, h3, h4, h5, h6, .txt-heading, .load-more-area #link #loadmore, .load-more-area #link #action, .big-button #link #loadmore, .big-button #link #action {
+  margin: 0px;
+  font-family: "IBM Plex Sans Arabic"; }
+  h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .txt-heading *, .load-more-area #link #loadmore *, .load-more-area #link #action *, .big-button #link #loadmore *, .big-button #link #action * {
+    font-family: "IBM Plex Sans Arabic"; }
+
+/*
+h1{
+    color: colors(black);
+    *{
+        color: colors(black);
+    }
+}
+*/
+.txt-xs {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400; }
+
+.txt-sm {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400; }
+
+.txt-md, .load-more-area #link #loadmore, .load-more-area #link #action, .big-button #link #loadmore, .big-button #link #action, h3 {
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 400; }
+
+.txt-lr, h2 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%; }
+
+.txt-xl, #soon h3 i, h1 {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  margin-bottom: 0.5rem; }
+
+.txt-xxl {
+  font-weight: 400;
+  font-size: 84px;
+  line-height: 150%;
+  margin-bottom: 1rem; }
+
+.sm-lh {
+  line-height: 1rem; }
+
+.md-lh {
+  line-height: calc(3rem - 30px); }
+
+.lr-lh {
+  line-height: calc(3rem - 10px); }
+
+.txt-center {
+  text-align: center; }
+
+.txt-left {
+  text-align: left; }
+
+.txt-right {
+  text-align: right; }
+
+.txt-special {
+  font-size: 146pt;
+  background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.hor-text {
+  text-transform: uppercase;
+  font-weight: 400; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .hor-text {
+      -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+      transform: rotate(180deg); } }
+
+.over-dots {
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis; }
+  .over-dots.oneline {
+    white-space: nowrap; }
+
+.txt-underline {
+  text-decoration: underline; }
+
+.sm-pad-top-fix {
+  padding-top: 110px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .sm-pad-top-fix {
+      padding-top: 0px; } }
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?a7ae66");
+  src: url("../fonts/icomoon.eot?a7ae66#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?a7ae66") format("truetype"), url("../fonts/icomoon.woff?a7ae66") format("woff"), url("../fonts/icomoon.svg?a7ae66#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+.ic {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 22px; }
+  .ic.md {
+    font-size: 28px; }
+  .ic.lr {
+    font-size: 32px; }
+  .ic.xl {
+    font-size: 46px; }
+  .ic.xxl {
+    font-size: 56px; }
+
+.icon-plus:before {
+  content: ""; }
+
+.icon-plus1:before {
+  content: ""; }
+
+.icon-plus2:before {
+  content: ""; }
+
+.icon-plus4:before {
+  content: ""; }
+
+.icon-plus5:before {
+  content: ""; }
+
+.icon-plus6:before {
+  content: ""; }
+
+.icon-plus7:before {
+  content: ""; }
+
+.icon-plus8:before {
+  content: ""; }
+
+.icon-plus9:before {
+  content: ""; }
+
+.icon-plus10:before {
+  content: ""; }
+
+.icon-px:before {
+  content: ""; }
+
+.icon-abacus:before {
+  content: ""; }
+
+.icon-accessible-icon-alt:before {
+  content: ""; }
+
+.icon-adjust-alt:before {
+  content: ""; }
+
+.icon-adjust-circle:before {
+  content: ""; }
+
+.icon-adjust-half:before {
+  content: ""; }
+
+.icon-adjust:before {
+  content: ""; }
+
+.icon-adobe-alt:before {
+  content: ""; }
+
+.icon-adobe:before {
+  content: ""; }
+
+.icon-airplay:before {
+  content: ""; }
+
+.icon-align-alt:before {
+  content: ""; }
+
+.icon-align-center-alt:before {
+  content: ""; }
+
+.icon-align-center-h:before {
+  content: ""; }
+
+.icon-align-center-justify:before {
+  content: ""; }
+
+.icon-align-center-v:before {
+  content: ""; }
+
+.icon-align-center:before {
+  content: ""; }
+
+.icon-align-justify:before {
+  content: ""; }
+
+.icon-align-left-justify:before {
+  content: ""; }
+
+.icon-align-left:before {
+  content: ""; }
+
+.icon-align-letter-right:before {
+  content: ""; }
+
+.icon-align-right-justify:before {
+  content: ""; }
+
+.icon-align-right:before {
+  content: ""; }
+
+.icon-align:before {
+  content: ""; }
+
+.icon-amazon:before {
+  content: ""; }
+
+.icon-ambulance:before {
+  content: ""; }
+
+.icon-analysis:before {
+  content: ""; }
+
+.icon-analytics:before {
+  content: ""; }
+
+.icon-anchor:before {
+  content: ""; }
+
+.icon-android-alt:before {
+  content: ""; }
+
+.icon-android-phone-slash:before {
+  content: ""; }
+
+.icon-android:before {
+  content: ""; }
+
+.icon-angle-double-down:before {
+  content: ""; }
+
+.icon-angle-double-left:before {
+  content: ""; }
+
+.icon-angle-double-right:before {
+  content: ""; }
+
+.icon-angle-double-up:before {
+  content: ""; }
+
+.icon-angle-down:before {
+  content: ""; }
+
+.icon-angle-left-b:before {
+  content: ""; }
+
+.icon-angle-left:before {
+  content: ""; }
+
+.icon-angle-right-1:before {
+  content: ""; }
+
+.icon-angle-right-b-1:before {
+  content: ""; }
+
+.icon-angle-right-b:before {
+  content: ""; }
+
+.icon-angle-right:before {
+  content: ""; }
+
+.icon-angle-up:before {
+  content: ""; }
+
+.icon-angry:before {
+  content: ""; }
+
+.icon-ankh:before {
+  content: ""; }
+
+.icon-annoyed-alt:before {
+  content: ""; }
+
+.icon-annoyed:before {
+  content: ""; }
+
+.icon-apple-alt:before {
+  content: ""; }
+
+.icon-apple:before {
+  content: ""; }
+
+.icon-apps:before {
+  content: ""; }
+
+.icon-archive-alt:before {
+  content: ""; }
+
+.icon-archive:before {
+  content: ""; }
+
+.icon-archway:before {
+  content: ""; }
+
+.icon-arrow-break:before {
+  content: ""; }
+
+.icon-arrow-circle-down:before {
+  content: ""; }
+
+.icon-arrow-circle-left:before {
+  content: ""; }
+
+.icon-arrow-circle-right:before {
+  content: ""; }
+
+.icon-arrow-circle-up:before {
+  content: ""; }
+
+.icon-arrow-compress-h:before {
+  content: ""; }
+
+.icon-arrow-down-left:before {
+  content: ""; }
+
+.icon-arrow-down-right:before {
+  content: ""; }
+
+.icon-arrow-down:before {
+  content: ""; }
+
+.icon-arrow-from-right:before {
+  content: ""; }
+
+.icon-arrow-from-top:before {
+  content: ""; }
+
+.icon-arrow-growth:before {
+  content: ""; }
+
+.icon-arrow-left:before {
+  content: ""; }
+
+.icon-arrow-random:before {
+  content: ""; }
+
+.icon-arrow-resize-diagonal:before {
+  content: ""; }
+
+.icon-arrow-right:before {
+  content: ""; }
+
+.icon-arrow-to-bottom:before {
+  content: ""; }
+
+.icon-arrow-to-right:before {
+  content: ""; }
+
+.icon-arrow-up-left:before {
+  content: ""; }
+
+.icon-arrow-up-right:before {
+  content: ""; }
+
+.icon-arrow-up:before {
+  content: ""; }
+
+.icon-arrow:before {
+  content: ""; }
+
+.icon-arrows-h-alt:before {
+  content: ""; }
+
+.icon-arrows-h:before {
+  content: ""; }
+
+.icon-arrows-left-down:before {
+  content: ""; }
+
+.icon-arrows-maximize:before {
+  content: ""; }
+
+.icon-arrows-merge:before {
+  content: ""; }
+
+.icon-arrows-resize-h:before {
+  content: ""; }
+
+.icon-arrows-resize-v:before {
+  content: ""; }
+
+.icon-arrows-resize:before {
+  content: ""; }
+
+.icon-arrows-right-down:before {
+  content: ""; }
+
+.icon-arrows-shrink-h:before {
+  content: ""; }
+
+.icon-arrows-shrink-v:before {
+  content: ""; }
+
+.icon-arrows-up-right:before {
+  content: ""; }
+
+.icon-arrows-v-alt:before {
+  content: ""; }
+
+.icon-arrows-v:before {
+  content: ""; }
+
+.icon-assistive-listening-systems:before {
+  content: ""; }
+
+.icon-asterisk:before {
+  content: ""; }
+
+.icon-at:before {
+  content: ""; }
+
+.icon-atom:before {
+  content: ""; }
+
+.icon-auto-flash:before {
+  content: ""; }
+
+.icon-award-alt:before {
+  content: ""; }
+
+.icon-award:before {
+  content: ""; }
+
+.icon-baby-carriage:before {
+  content: ""; }
+
+.icon-backpack:before {
+  content: ""; }
+
+.icon-backspace:before {
+  content: ""; }
+
+.icon-backward:before {
+  content: ""; }
+
+.icon-bag-alt:before {
+  content: ""; }
+
+.icon-bag-slash:before {
+  content: ""; }
+
+.icon-bag:before {
+  content: ""; }
+
+.icon-balance-scale:before {
+  content: ""; }
+
+.icon-ban:before {
+  content: ""; }
+
+.icon-band-aid:before {
+  content: ""; }
+
+.icon-bars:before {
+  content: ""; }
+
+.icon-baseball-ball:before {
+  content: ""; }
+
+.icon-basketball-hoop:before {
+  content: ""; }
+
+.icon-basketball:before {
+  content: ""; }
+
+.icon-bath:before {
+  content: ""; }
+
+.icon-battery-bolt:before {
+  content: ""; }
+
+.icon-battery-empty:before {
+  content: ""; }
+
+.icon-bed-double:before {
+  content: ""; }
+
+.icon-bed:before {
+  content: ""; }
+
+.icon-behance-alt:before {
+  content: ""; }
+
+.icon-behance:before {
+  content: ""; }
+
+.icon-bell-school:before {
+  content: ""; }
+
+.icon-bell-slash:before {
+  content: ""; }
+
+.icon-bell:before {
+  content: ""; }
+
+.icon-bill:before {
+  content: ""; }
+
+.icon-bitcoin-alt:before {
+  content: ""; }
+
+.icon-bitcoin-circle:before {
+  content: ""; }
+
+.icon-bitcoin-sign:before {
+  content: ""; }
+
+.icon-bitcoin:before {
+  content: ""; }
+
+.icon-black-berry:before {
+  content: ""; }
+
+.icon-blogger-alt:before {
+  content: ""; }
+
+.icon-blogger:before {
+  content: ""; }
+
+.icon-bluetooth-b:before {
+  content: ""; }
+
+.icon-bold:before {
+  content: ""; }
+
+.icon-bolt-alt:before {
+  content: ""; }
+
+.icon-bolt-slash:before {
+  content: ""; }
+
+.icon-bolt:before {
+  content: ""; }
+
+.icon-book-alt:before {
+  content: ""; }
+
+.icon-book-medical:before {
+  content: ""; }
+
+.icon-book-open:before {
+  content: ""; }
+
+.icon-book-reader:before {
+  content: ""; }
+
+.icon-book:before {
+  content: ""; }
+
+.icon-bookmark-full:before {
+  content: ""; }
+
+.icon-bookmark:before {
+  content: ""; }
+
+.icon-books:before {
+  content: ""; }
+
+.icon-boombox:before {
+  content: ""; }
+
+.icon-border-alt:before {
+  content: ""; }
+
+.icon-border-bottom:before {
+  content: ""; }
+
+.icon-border-clear:before {
+  content: ""; }
+
+.icon-border-horizontal:before {
+  content: ""; }
+
+.icon-border-inner:before {
+  content: ""; }
+
+.icon-border-left:before {
+  content: ""; }
+
+.icon-border-out:before {
+  content: ""; }
+
+.icon-border-right:before {
+  content: ""; }
+
+.icon-border-top:before {
+  content: ""; }
+
+.icon-border-vertical:before {
+  content: ""; }
+
+.icon-bowling-ball:before {
+  content: ""; }
+
+.icon-box:before {
+  content: ""; }
+
+.icon-brackets-curly:before {
+  content: ""; }
+
+.icon-brain:before {
+  content: ""; }
+
+.icon-briefcase-alt:before {
+  content: ""; }
+
+.icon-briefcase:before {
+  content: ""; }
+
+.icon-bright:before {
+  content: ""; }
+
+.icon-brightness-empty:before {
+  content: ""; }
+
+.icon-brightness-half:before {
+  content: ""; }
+
+.icon-brightness-low:before {
+  content: ""; }
+
+.icon-brightness-minus:before {
+  content: ""; }
+
+.icon-brightness-plus:before {
+  content: ""; }
+
+.icon-brightness:before {
+  content: ""; }
+
+.icon-bring-bottom:before {
+  content: ""; }
+
+.icon-bring-front:before {
+  content: ""; }
+
+.icon-browser:before {
+  content: ""; }
+
+.icon-brush-alt:before {
+  content: ""; }
+
+.icon-bug:before {
+  content: ""; }
+
+.icon-building:before {
+  content: ""; }
+
+.icon-bullseye:before {
+  content: ""; }
+
+.icon-bus-alt:before {
+  content: ""; }
+
+.icon-bus-school:before {
+  content: ""; }
+
+.icon-bus:before {
+  content: ""; }
+
+.icon-calculator-alt:before {
+  content: ""; }
+
+.icon-calculator:before {
+  content: ""; }
+
+.icon-calendar-alt:before {
+  content: ""; }
+
+.icon-calendar-slash:before {
+  content: ""; }
+
+.icon-calender:before {
+  content: ""; }
+
+.icon-calling:before {
+  content: ""; }
+
+.icon-camera-change:before {
+  content: ""; }
+
+.icon-camera-plus:before {
+  content: ""; }
+
+.icon-camera-slash:before {
+  content: ""; }
+
+.icon-camera:before {
+  content: ""; }
+
+.icon-cancel:before {
+  content: ""; }
+
+.icon-capsule:before {
+  content: ""; }
+
+.icon-capture:before {
+  content: ""; }
+
+.icon-car-sideview:before {
+  content: ""; }
+
+.icon-car-slash:before {
+  content: ""; }
+
+.icon-car-wash:before {
+  content: ""; }
+
+.icon-car:before {
+  content: ""; }
+
+.icon-card-atm:before {
+  content: ""; }
+
+.icon-caret-right:before {
+  content: ""; }
+
+.icon-cell:before {
+  content: ""; }
+
+.icon-celsius:before {
+  content: ""; }
+
+.icon-channel-add:before {
+  content: ""; }
+
+.icon-channel:before {
+  content: ""; }
+
+.icon-chart-bar-alt:before {
+  content: ""; }
+
+.icon-chart-bar:before {
+  content: ""; }
+
+.icon-chart-down:before {
+  content: ""; }
+
+.icon-chart-growth-alt:before {
+  content: ""; }
+
+.icon-chart-growth:before {
+  content: ""; }
+
+.icon-chart-line:before {
+  content: ""; }
+
+.icon-chart-pie-alt:before {
+  content: ""; }
+
+.icon-chart-pie:before {
+  content: ""; }
+
+.icon-chart:before {
+  content: ""; }
+
+.icon-chat-bubble-user:before {
+  content: ""; }
+
+.icon-chat-info:before {
+  content: ""; }
+
+.icon-chat:before {
+  content: ""; }
+
+.icon-check-circle:before {
+  content: ""; }
+
+.icon-check-square:before {
+  content: ""; }
+
+.icon-check:before {
+  content: ""; }
+
+.icon-circle-layer:before {
+  content: ""; }
+
+.icon-circle:before {
+  content: ""; }
+
+.icon-circuit:before {
+  content: ""; }
+
+.icon-clapper-board:before {
+  content: ""; }
+
+.icon-clinic-medical:before {
+  content: ""; }
+
+.icon-clipboard-alt:before {
+  content: ""; }
+
+.icon-clipboard-blank:before {
+  content: ""; }
+
+.icon-clipboard-notes:before {
+  content: ""; }
+
+.icon-clipboard:before {
+  content: ""; }
+
+.icon-clock-eight:before {
+  content: ""; }
+
+.icon-clock-five:before {
+  content: ""; }
+
+.icon-clock-nine:before {
+  content: ""; }
+
+.icon-clock-seven:before {
+  content: ""; }
+
+.icon-clock-ten:before {
+  content: ""; }
+
+.icon-clock-three:before {
+  content: ""; }
+
+.icon-clock-two:before {
+  content: ""; }
+
+.icon-clock:before {
+  content: ""; }
+
+.icon-closed-captioning-slash:before {
+  content: ""; }
+
+.icon-closed-captioning:before {
+  content: ""; }
+
+.icon-cloud-block:before {
+  content: ""; }
+
+.icon-cloud-bookmark:before {
+  content: ""; }
+
+.icon-cloud-check:before {
+  content: ""; }
+
+.icon-cloud-computing:before {
+  content: ""; }
+
+.icon-cloud-data-connection:before {
+  content: ""; }
+
+.icon-cloud-database-tree:before {
+  content: ""; }
+
+.icon-cloud-download:before {
+  content: ""; }
+
+.icon-cloud-drizzle:before {
+  content: ""; }
+
+.icon-cloud-exclamation:before {
+  content: ""; }
+
+.icon-cloud-hail:before {
+  content: ""; }
+
+.icon-cloud-heart:before {
+  content: ""; }
+
+.icon-cloud-info:before {
+  content: ""; }
+
+.icon-cloud-lock:before {
+  content: ""; }
+
+.icon-cloud-meatball:before {
+  content: ""; }
+
+.icon-cloud-moon-hail:before {
+  content: ""; }
+
+.icon-cloud-moon-meatball:before {
+  content: ""; }
+
+.icon-cloud-moon-rain:before {
+  content: ""; }
+
+.icon-cloud-moon-showers:before {
+  content: ""; }
+
+.icon-cloud-moon:before {
+  content: ""; }
+
+.icon-cloud-question:before {
+  content: ""; }
+
+.icon-cloud-rain-sun:before {
+  content: ""; }
+
+.icon-cloud-rain:before {
+  content: ""; }
+
+.icon-cloud-redo:before {
+  content: ""; }
+
+.icon-cloud-share:before {
+  content: ""; }
+
+.icon-cloud-shield:before {
+  content: ""; }
+
+.icon-cloud-showers-alt:before {
+  content: ""; }
+
+.icon-cloud-showers-heavy:before {
+  content: ""; }
+
+.icon-cloud-showers:before {
+  content: ""; }
+
+.icon-cloud-slash:before {
+  content: ""; }
+
+.icon-cloud-sun-hail:before {
+  content: ""; }
+
+.icon-cloud-sun-meatball:before {
+  content: ""; }
+
+.icon-cloud-sun-rain-alt:before {
+  content: ""; }
+
+.icon-cloud-sun-rain:before {
+  content: ""; }
+
+.icon-cloud-sun-tear:before {
+  content: ""; }
+
+.icon-cloud-sun:before {
+  content: ""; }
+
+.icon-cloud-times:before {
+  content: ""; }
+
+.icon-cloud-unlock:before {
+  content: ""; }
+
+.icon-cloud-upload:before {
+  content: ""; }
+
+.icon-cloud-wifi:before {
+  content: ""; }
+
+.icon-cloud-wind:before {
+  content: ""; }
+
+.icon-cloud:before {
+  content: ""; }
+
+.icon-clouds:before {
+  content: ""; }
+
+.icon-club:before {
+  content: ""; }
+
+.icon-code-branch:before {
+  content: ""; }
+
+.icon-coffee:before {
+  content: ""; }
+
+.icon-cog:before {
+  content: ""; }
+
+.icon-coins:before {
+  content: ""; }
+
+.icon-columns:before {
+  content: ""; }
+
+.icon-comment-add:before {
+  content: ""; }
+
+.icon-comment-alt-block:before {
+  content: ""; }
+
+.icon-comment-alt-chart-lines:before {
+  content: ""; }
+
+.icon-comment-alt-check:before {
+  content: ""; }
+
+.icon-comment-alt-dots:before {
+  content: ""; }
+
+.icon-comment-alt-download:before {
+  content: ""; }
+
+.icon-comment-alt-edit:before {
+  content: ""; }
+
+.icon-comment-alt-exclamation:before {
+  content: ""; }
+
+.icon-comment-alt-heart:before {
+  content: ""; }
+
+.icon-comment-alt-image:before {
+  content: ""; }
+
+.icon-comment-alt-info:before {
+  content: ""; }
+
+.icon-comment-alt-lines:before {
+  content: ""; }
+
+.icon-comment-alt-lock:before {
+  content: ""; }
+
+.icon-comment-alt-medical:before {
+  content: ""; }
+
+.icon-comment-alt-message:before {
+  content: ""; }
+
+.icon-comment-alt-notes:before {
+  content: ""; }
+
+.icon-comment-alt-plus:before {
+  content: ""; }
+
+.icon-comment-alt-question:before {
+  content: ""; }
+
+.icon-comment-alt-redo:before {
+  content: ""; }
+
+.icon-comment-alt-search:before {
+  content: ""; }
+
+.icon-comment-alt-share:before {
+  content: ""; }
+
+.icon-comment-alt-shield:before {
+  content: ""; }
+
+.icon-comment-alt-slash:before {
+  content: ""; }
+
+.icon-comment-alt-upload:before {
+  content: ""; }
+
+.icon-comment-alt-verify:before {
+  content: ""; }
+
+.icon-comment-alt:before {
+  content: ""; }
+
+.icon-comment-block:before {
+  content: ""; }
+
+.icon-comment-chart-line:before {
+  content: ""; }
+
+.icon-comment-check:before {
+  content: ""; }
+
+.icon-comment-dots:before {
+  content: ""; }
+
+.icon-comment-download:before {
+  content: ""; }
+
+.icon-comment-edit:before {
+  content: ""; }
+
+.icon-comment-exclamation:before {
+  content: ""; }
+
+.icon-comment-heart:before {
+  content: ""; }
+
+.icon-comment-image:before {
+  content: ""; }
+
+.icon-comment-info-alt:before {
+  content: ""; }
+
+.icon-comment-info:before {
+  content: ""; }
+
+.icon-comment-lines:before {
+  content: ""; }
+
+.icon-comment-lock:before {
+  content: ""; }
+
+.icon-comment-medical:before {
+  content: ""; }
+
+.icon-comment-message:before {
+  content: ""; }
+
+.icon-comment-notes:before {
+  content: ""; }
+
+.icon-comment-plus:before {
+  content: ""; }
+
+.icon-comment-question:before {
+  content: ""; }
+
+.icon-comment-redo:before {
+  content: ""; }
+
+.icon-comment-search:before {
+  content: ""; }
+
+.icon-comment-share:before {
+  content: ""; }
+
+.icon-comment-shield:before {
+  content: ""; }
+
+.icon-comment-slash:before {
+  content: ""; }
+
+.icon-comment-upload:before {
+  content: ""; }
+
+.icon-comment-verify:before {
+  content: ""; }
+
+.icon-comment:before {
+  content: ""; }
+
+.icon-comments-alt:before {
+  content: ""; }
+
+.icon-comments:before {
+  content: ""; }
+
+.icon-compact-disc:before {
+  content: ""; }
+
+.icon-comparison:before {
+  content: ""; }
+
+.icon-compass:before {
+  content: ""; }
+
+.icon-compress-alt-left:before {
+  content: ""; }
+
+.icon-compress-alt:before {
+  content: ""; }
+
+.icon-compress-arrows:before {
+  content: ""; }
+
+.icon-compress-lines:before {
+  content: ""; }
+
+.icon-compress-point:before {
+  content: ""; }
+
+.icon-compress-v:before {
+  content: ""; }
+
+.icon-compress:before {
+  content: ""; }
+
+.icon-confused:before {
+  content: ""; }
+
+.icon-constructor:before {
+  content: ""; }
+
+.icon-copy-alt:before {
+  content: ""; }
+
+.icon-copy-landscape:before {
+  content: ""; }
+
+.icon-copy:before {
+  content: ""; }
+
+.icon-copyright:before {
+  content: ""; }
+
+.icon-corner-down-left:before {
+  content: ""; }
+
+.icon-corner-down-right-alt:before {
+  content: ""; }
+
+.icon-corner-down-right:before {
+  content: ""; }
+
+.icon-corner-left-down:before {
+  content: ""; }
+
+.icon-corner-right-down:before {
+  content: ""; }
+
+.icon-corner-up-left-alt:before {
+  content: ""; }
+
+.icon-corner-up-left:before {
+  content: ""; }
+
+.icon-corner-up-right-alt:before {
+  content: ""; }
+
+.icon-corner-up-right:before {
+  content: ""; }
+
+.icon-coronavirus:before {
+  content: ""; }
+
+.icon-create-dashboard:before {
+  content: ""; }
+
+.icon-creative-commons-pd:before {
+  content: ""; }
+
+.icon-credit-card-search:before {
+  content: ""; }
+
+.icon-credit-card:before {
+  content: ""; }
+
+.icon-crockery:before {
+  content: ""; }
+
+.icon-crop-alt-rotate-left:before {
+  content: ""; }
+
+.icon-crop-alt-rotate-right:before {
+  content: ""; }
+
+.icon-crop-alt:before {
+  content: ""; }
+
+.icon-crosshair-alt:before {
+  content: ""; }
+
+.icon-crosshair:before {
+  content: ""; }
+
+.icon-crosshairs:before {
+  content: ""; }
+
+.icon-cube:before {
+  content: ""; }
+
+.icon-dashboard:before {
+  content: ""; }
+
+.icon-data-sharing:before {
+  content: ""; }
+
+.icon-database-alt:before {
+  content: ""; }
+
+.icon-database:before {
+  content: ""; }
+
+.icon-desert:before {
+  content: ""; }
+
+.icon-desktop-alt-slash:before {
+  content: ""; }
+
+.icon-desktop-alt:before {
+  content: ""; }
+
+.icon-desktop-cloud-alt:before {
+  content: ""; }
+
+.icon-desktop-slash:before {
+  content: ""; }
+
+.icon-desktop:before {
+  content: ""; }
+
+.icon-dialpad-alt:before {
+  content: ""; }
+
+.icon-dialpad:before {
+  content: ""; }
+
+.icon-diamond:before {
+  content: ""; }
+
+.icon-diary-alt:before {
+  content: ""; }
+
+.icon-diary:before {
+  content: ""; }
+
+.icon-dice-five:before {
+  content: ""; }
+
+.icon-dice-four:before {
+  content: ""; }
+
+.icon-dice-one:before {
+  content: ""; }
+
+.icon-dice-six:before {
+  content: ""; }
+
+.icon-dice-three:before {
+  content: ""; }
+
+.icon-dice-two:before {
+  content: ""; }
+
+.icon-direction:before {
+  content: ""; }
+
+.icon-directions:before {
+  content: ""; }
+
+.icon-dizzy-meh:before {
+  content: ""; }
+
+.icon-dna:before {
+  content: ""; }
+
+.icon-document-info:before {
+  content: ""; }
+
+.icon-document-layout-center:before {
+  content: ""; }
+
+.icon-document-layout-left:before {
+  content: ""; }
+
+.icon-document-layout-right:before {
+  content: ""; }
+
+.icon-dollar-alt:before {
+  content: ""; }
+
+.icon-dollar-sign-alt:before {
+  content: ""; }
+
+.icon-dollar-sign:before {
+  content: ""; }
+
+.icon-download-alt:before {
+  content: ""; }
+
+.icon-dribbble:before {
+  content: ""; }
+
+.icon-drill:before {
+  content: ""; }
+
+.icon-dropbox:before {
+  content: ""; }
+
+.icon-dumbbell:before {
+  content: ""; }
+
+.icon-ear:before {
+  content: ""; }
+
+.icon-edit-alt:before {
+  content: ""; }
+
+.icon-edit:before {
+  content: ""; }
+
+.icon-ellipsis-h:before {
+  content: ""; }
+
+.icon-ellipsis-v:before {
+  content: ""; }
+
+.icon-emoji:before {
+  content: ""; }
+
+.icon-enter:before {
+  content: ""; }
+
+.icon-envelope-add:before {
+  content: ""; }
+
+.icon-envelope-alt:before {
+  content: ""; }
+
+.icon-envelope-block:before {
+  content: ""; }
+
+.icon-envelope-bookmark:before {
+  content: ""; }
+
+.icon-envelope-check:before {
+  content: ""; }
+
+.icon-envelope-download-alt:before {
+  content: ""; }
+
+.icon-envelope-download:before {
+  content: ""; }
+
+.icon-envelope-edit:before {
+  content: ""; }
+
+.icon-envelope-exclamation:before {
+  content: ""; }
+
+.icon-envelope-heart:before {
+  content: ""; }
+
+.icon-envelope-info:before {
+  content: ""; }
+
+.icon-envelope-lock:before {
+  content: ""; }
+
+.icon-envelope-minus:before {
+  content: ""; }
+
+.icon-envelope-open:before {
+  content: ""; }
+
+.icon-envelope-question:before {
+  content: ""; }
+
+.icon-envelope-receive:before {
+  content: ""; }
+
+.icon-envelope-redo:before {
+  content: ""; }
+
+.icon-envelope-search:before {
+  content: ""; }
+
+.icon-envelope-send:before {
+  content: ""; }
+
+.icon-envelope-share:before {
+  content: ""; }
+
+.icon-envelope-shield:before {
+  content: ""; }
+
+.icon-envelope-star:before {
+  content: ""; }
+
+.icon-envelope-times:before {
+  content: ""; }
+
+.icon-envelope-upload-alt:before {
+  content: ""; }
+
+.icon-envelope-upload:before {
+  content: ""; }
+
+.icon-envelope:before {
+  content: ""; }
+
+.icon-envelopes:before {
+  content: ""; }
+
+.icon-equal-circle:before {
+  content: ""; }
+
+.icon-euro-circle:before {
+  content: ""; }
+
+.icon-euro:before {
+  content: ""; }
+
+.icon-exchange-alt:before {
+  content: ""; }
+
+.icon-exchange:before {
+  content: ""; }
+
+.icon-exclamation-circle:before {
+  content: ""; }
+
+.icon-exclamation-octagon:before {
+  content: ""; }
+
+.icon-exclamation-triangle:before {
+  content: ""; }
+
+.icon-exclude:before {
+  content: ""; }
+
+.icon-exit:before {
+  content: ""; }
+
+.icon-expand-alt:before {
+  content: ""; }
+
+.icon-expand-arrows-alt:before {
+  content: ""; }
+
+.icon-expand-arrows:before {
+  content: ""; }
+
+.icon-expand-from-corner:before {
+  content: ""; }
+
+.icon-expand-left:before {
+  content: ""; }
+
+.icon-expand-right:before {
+  content: ""; }
+
+.icon-export:before {
+  content: ""; }
+
+.icon-exposure-alt:before {
+  content: ""; }
+
+.icon-exposure-increase:before {
+  content: ""; }
+
+.icon-external-link-alt:before {
+  content: ""; }
+
+.icon-eye-slash:before {
+  content: ""; }
+
+.icon-eye:before {
+  content: ""; }
+
+.icon-facebook-f:before {
+  content: ""; }
+
+.icon-facebook-messenger-alt:before {
+  content: ""; }
+
+.icon-facebook-messenger:before {
+  content: ""; }
+
+.icon-facebook:before {
+  content: ""; }
+
+.icon-fahrenheit:before {
+  content: ""; }
+
+.icon-fast-mail-alt:before {
+  content: ""; }
+
+.icon-fast-mail:before {
+  content: ""; }
+
+.icon-favorite:before {
+  content: ""; }
+
+.icon-feedback:before {
+  content: ""; }
+
+.icon-file-alt-1:before {
+  content: ""; }
+
+.icon-file-alt:before {
+  content: ""; }
+
+.icon-file-blank:before {
+  content: ""; }
+
+.icon-file-block-alt:before {
+  content: ""; }
+
+.icon-file-bookmark-alt:before {
+  content: ""; }
+
+.icon-file-check-alt:before {
+  content: ""; }
+
+.icon-file-check:before {
+  content: ""; }
+
+.icon-file-contract-dollar:before {
+  content: ""; }
+
+.icon-file-copy-alt:before {
+  content: ""; }
+
+.icon-file-download-alt:before {
+  content: ""; }
+
+.icon-file-download:before {
+  content: ""; }
+
+.icon-file-edit-alt:before {
+  content: ""; }
+
+.icon-file-exclamation-alt:before {
+  content: ""; }
+
+.icon-file-exclamation:before {
+  content: ""; }
+
+.icon-file-export:before {
+  content: ""; }
+
+.icon-file-heart:before {
+  content: ""; }
+
+.icon-file-import:before {
+  content: ""; }
+
+.icon-file-info-alt:before {
+  content: ""; }
+
+.icon-file-landscape-alt:before {
+  content: ""; }
+
+.icon-file-landscape:before {
+  content: ""; }
+
+.icon-file-lanscape-slash:before {
+  content: ""; }
+
+.icon-file-lock-alt:before {
+  content: ""; }
+
+.icon-file-medical-alt:before {
+  content: ""; }
+
+.icon-file-medical:before {
+  content: ""; }
+
+.icon-file-minus-alt:before {
+  content: ""; }
+
+.icon-file-minus:before {
+  content: ""; }
+
+.icon-file-network:before {
+  content: ""; }
+
+.icon-file-plus-alt:before {
+  content: ""; }
+
+.icon-file-plus:before {
+  content: ""; }
+
+.icon-file-question-alt:before {
+  content: ""; }
+
+.icon-file-question:before {
+  content: ""; }
+
+.icon-file-redo-alt:before {
+  content: ""; }
+
+.icon-file-search-alt:before {
+  content: ""; }
+
+.icon-file-share-alt:before {
+  content: ""; }
+
+.icon-file-shield-alt:before {
+  content: ""; }
+
+.icon-file-slash:before {
+  content: ""; }
+
+.icon-file-times-alt:before {
+  content: ""; }
+
+.icon-file-times:before {
+  content: ""; }
+
+.icon-file-upload-alt:before {
+  content: ""; }
+
+.icon-file-upload:before {
+  content: ""; }
+
+.icon-file:before {
+  content: ""; }
+
+.icon-files-landscapes-alt:before {
+  content: ""; }
+
+.icon-files-landscapes:before {
+  content: ""; }
+
+.icon-film:before {
+  content: ""; }
+
+.icon-filter-slash:before {
+  content: ""; }
+
+.icon-filter:before {
+  content: ""; }
+
+.icon-fire:before {
+  content: ""; }
+
+.icon-flask-potion:before {
+  content: ""; }
+
+.icon-flask:before {
+  content: ""; }
+
+.icon-flip-h-alt:before {
+  content: ""; }
+
+.icon-flip-h:before {
+  content: ""; }
+
+.icon-flip-v-alt:before {
+  content: ""; }
+
+.icon-flip-v:before {
+  content: ""; }
+
+.icon-flower:before {
+  content: ""; }
+
+.icon-focus-add:before {
+  content: ""; }
+
+.icon-focus-target:before {
+  content: ""; }
+
+.icon-focus:before {
+  content: ""; }
+
+.icon-folder-check:before {
+  content: ""; }
+
+.icon-folder-download:before {
+  content: ""; }
+
+.icon-folder-exclamation:before {
+  content: ""; }
+
+.icon-folder-heart:before {
+  content: ""; }
+
+.icon-folder-info:before {
+  content: ""; }
+
+.icon-folder-lock:before {
+  content: ""; }
+
+.icon-folder-medical:before {
+  content: ""; }
+
+.icon-folder-minus:before {
+  content: ""; }
+
+.icon-folder-network:before {
+  content: ""; }
+
+.icon-folder-open:before {
+  content: ""; }
+
+.icon-folder-plus:before {
+  content: ""; }
+
+.icon-folder-question:before {
+  content: ""; }
+
+.icon-folder-slash:before {
+  content: ""; }
+
+.icon-folder-times:before {
+  content: ""; }
+
+.icon-folder-upload:before {
+  content: ""; }
+
+.icon-folder:before {
+  content: ""; }
+
+.icon-football-american:before {
+  content: ""; }
+
+.icon-football-ball:before {
+  content: ""; }
+
+.icon-football:before {
+  content: ""; }
+
+.icon-forecastcloud-moon-tear:before {
+  content: ""; }
+
+.icon-forwaded-call:before {
+  content: ""; }
+
+.icon-forward:before {
+  content: ""; }
+
+.icon-frown:before {
+  content: ""; }
+
+.icon-game-structure:before {
+  content: ""; }
+
+.icon-gift:before {
+  content: ""; }
+
+.icon-github-alt:before {
+  content: ""; }
+
+.icon-github:before {
+  content: ""; }
+
+.icon-glass-martini-alt-slash:before {
+  content: ""; }
+
+.icon-glass-martini-alt:before {
+  content: ""; }
+
+.icon-glass-martini:before {
+  content: ""; }
+
+.icon-glass-tea:before {
+  content: ""; }
+
+.icon-glass:before {
+  content: ""; }
+
+.icon-globe:before {
+  content: ""; }
+
+.icon-gold:before {
+  content: ""; }
+
+.icon-golf-ball:before {
+  content: ""; }
+
+.icon-google-drive-alt:before {
+  content: ""; }
+
+.icon-google-drive:before {
+  content: ""; }
+
+.icon-google-hangouts-alt:before {
+  content: ""; }
+
+.icon-google-hangouts:before {
+  content: ""; }
+
+.icon-google-play:before {
+  content: ""; }
+
+.icon-google:before {
+  content: ""; }
+
+.icon-graduation-cap:before {
+  content: ""; }
+
+.icon-graph-bar:before {
+  content: ""; }
+
+.icon-grid:before {
+  content: ""; }
+
+.icon-grids:before {
+  content: ""; }
+
+.icon-grin-tongue-wink-alt:before {
+  content: ""; }
+
+.icon-grin-tongue-wink:before {
+  content: ""; }
+
+.icon-grin:before {
+  content: ""; }
+
+.icon-grip-horizontal-line:before {
+  content: ""; }
+
+.icon-hard-hat:before {
+  content: ""; }
+
+.icon-hdd:before {
+  content: ""; }
+
+.icon-head-side-cough:before {
+  content: ""; }
+
+.icon-head-side-mask:before {
+  content: ""; }
+
+.icon-head-side:before {
+  content: ""; }
+
+.icon-headphones-alt:before {
+  content: ""; }
+
+.icon-headphones:before {
+  content: ""; }
+
+.icon-heart-alt:before {
+  content: ""; }
+
+.icon-heart-break:before {
+  content: ""; }
+
+.icon-heart-medical:before {
+  content: ""; }
+
+.icon-heart-rate:before {
+  content: ""; }
+
+.icon-heart-sign:before {
+  content: ""; }
+
+.icon-heart:before {
+  content: ""; }
+
+.icon-heartbeat:before {
+  content: ""; }
+
+.icon-history-alt:before {
+  content: ""; }
+
+.icon-history:before {
+  content: ""; }
+
+.icon-home-alt:before {
+  content: ""; }
+
+.icon-home:before {
+  content: ""; }
+
+.icon-horizontal-align-center:before {
+  content: ""; }
+
+.icon-horizontal-align-left:before {
+  content: ""; }
+
+.icon-horizontal-align-right:before {
+  content: ""; }
+
+.icon-horizontal-distribution-center:before {
+  content: ""; }
+
+.icon-horizontal-distribution-left:before {
+  content: ""; }
+
+.icon-horizontal-distribution-right:before {
+  content: ""; }
+
+.icon-hospital-square-sign:before {
+  content: ""; }
+
+.icon-hospital-symbol:before {
+  content: ""; }
+
+.icon-hospital:before {
+  content: ""; }
+
+.icon-hourglass:before {
+  content: ""; }
+
+.icon-house-user:before {
+  content: ""; }
+
+.icon-html3-alt:before {
+  content: ""; }
+
+.icon-html3:before {
+  content: ""; }
+
+.icon-hunting:before {
+  content: ""; }
+
+.icon-image-alt-slash:before {
+  content: ""; }
+
+.icon-image-block:before {
+  content: ""; }
+
+.icon-image-broken:before {
+  content: ""; }
+
+.icon-image-check:before {
+  content: ""; }
+
+.icon-image-download:before {
+  content: ""; }
+
+.icon-image-edit:before {
+  content: ""; }
+
+.icon-image-lock:before {
+  content: ""; }
+
+.icon-image-minus:before {
+  content: ""; }
+
+.icon-image-plus:before {
+  content: ""; }
+
+.icon-image-question:before {
+  content: ""; }
+
+.icon-image-redo:before {
+  content: ""; }
+
+.icon-image-resize-landscape:before {
+  content: ""; }
+
+.icon-image-resize-square:before {
+  content: ""; }
+
+.icon-image-search:before {
+  content: ""; }
+
+.icon-image-share:before {
+  content: ""; }
+
+.icon-image-shield:before {
+  content: ""; }
+
+.icon-image-slash:before {
+  content: ""; }
+
+.icon-image-times:before {
+  content: ""; }
+
+.icon-image-upload:before {
+  content: ""; }
+
+.icon-image-v:before {
+  content: ""; }
+
+.icon-image:before {
+  content: ""; }
+
+.icon-images:before {
+  content: ""; }
+
+.icon-import:before {
+  content: ""; }
+
+.icon-incoming-call:before {
+  content: ""; }
+
+.icon-info-circle:before {
+  content: ""; }
+
+.icon-instagram-alt:before {
+  content: ""; }
+
+.icon-instagram:before {
+  content: ""; }
+
+.icon-intercom-alt:before {
+  content: ""; }
+
+.icon-intercom:before {
+  content: ""; }
+
+.icon-invoice:before {
+  content: ""; }
+
+.icon-italic:before {
+  content: ""; }
+
+.icon-jackhammer:before {
+  content: ""; }
+
+.icon-java-script:before {
+  content: ""; }
+
+.icon-kayak:before {
+  content: ""; }
+
+.icon-key-skeleton-alt:before {
+  content: ""; }
+
+.icon-key-skeleton:before {
+  content: ""; }
+
+.icon-keyboard-alt:before {
+  content: ""; }
+
+.icon-keyboard-hide:before {
+  content: ""; }
+
+.icon-keyboard-show:before {
+  content: ""; }
+
+.icon-keyboard:before {
+  content: ""; }
+
+.icon-keyhole-circle:before {
+  content: ""; }
+
+.icon-keyhole-square-full:before {
+  content: ""; }
+
+.icon-keyhole-square:before {
+  content: ""; }
+
+.icon-kid:before {
+  content: ""; }
+
+.icon-label-alt:before {
+  content: ""; }
+
+.icon-label:before {
+  content: ""; }
+
+.icon-lamp:before {
+  content: ""; }
+
+.icon-laptop-cloud:before {
+  content: ""; }
+
+.icon-laptop-connection:before {
+  content: ""; }
+
+.icon-laptop:before {
+  content: ""; }
+
+.icon-laughing:before {
+  content: ""; }
+
+.icon-layer-group-slash:before {
+  content: ""; }
+
+.icon-layer-group:before {
+  content: ""; }
+
+.icon-layers-alt:before {
+  content: ""; }
+
+.icon-layers-slash:before {
+  content: ""; }
+
+.icon-layers:before {
+  content: ""; }
+
+.icon-left-arrow-from-left:before {
+  content: ""; }
+
+.icon-left-arrow-to-left:before {
+  content: ""; }
+
+.icon-left-indent-alt:before {
+  content: ""; }
+
+.icon-left-indent:before {
+  content: ""; }
+
+.icon-left-to-right-text-direction:before {
+  content: ""; }
+
+.icon-life-ring:before {
+  content: ""; }
+
+.icon-lightbulb-alt:before {
+  content: ""; }
+
+.icon-lightbulb:before {
+  content: ""; }
+
+.icon-line-alt:before {
+  content: ""; }
+
+.icon-line-spacing:before {
+  content: ""; }
+
+.icon-line:before {
+  content: ""; }
+
+.icon-link-add:before {
+  content: ""; }
+
+.icon-link-alt:before {
+  content: ""; }
+
+.icon-link-broken:before {
+  content: ""; }
+
+.icon-link-h:before {
+  content: ""; }
+
+.icon-link:before {
+  content: ""; }
+
+.icon-linkedin-alt:before {
+  content: ""; }
+
+.icon-linkedin:before {
+  content: ""; }
+
+.icon-list-ui-alt:before {
+  content: ""; }
+
+.icon-list-ul:before {
+  content: ""; }
+
+.icon-location-arrow-alt:before {
+  content: ""; }
+
+.icon-location-arrow:before {
+  content: ""; }
+
+.icon-location-pin-alt:before {
+  content: ""; }
+
+.icon-location-point:before {
+  content: ""; }
+
+.icon-lock-access:before {
+  content: ""; }
+
+.icon-lock-alt:before {
+  content: ""; }
+
+.icon-lock-open-alt:before {
+  content: ""; }
+
+.icon-lock-slash:before {
+  content: ""; }
+
+.icon-lock:before {
+  content: ""; }
+
+.icon-luggage-cart:before {
+  content: ""; }
+
+.icon-mailbox-alt:before {
+  content: ""; }
+
+.icon-mailbox:before {
+  content: ""; }
+
+.icon-map-marker-alt:before {
+  content: ""; }
+
+.icon-map-marker-edit:before {
+  content: ""; }
+
+.icon-map-marker-info:before {
+  content: ""; }
+
+.icon-map-marker-minus:before {
+  content: ""; }
+
+.icon-map-marker-plus:before {
+  content: ""; }
+
+.icon-map-marker-question:before {
+  content: ""; }
+
+.icon-map-marker-shield:before {
+  content: ""; }
+
+.icon-map-marker-slash:before {
+  content: ""; }
+
+.icon-map-marker:before {
+  content: ""; }
+
+.icon-map-pin-alt:before {
+  content: ""; }
+
+.icon-map-pin:before {
+  content: ""; }
+
+.icon-map:before {
+  content: ""; }
+
+.icon-mars:before {
+  content: ""; }
+
+.icon-master-card:before {
+  content: ""; }
+
+.icon-maximize-left:before {
+  content: ""; }
+
+.icon-maximize-short:before {
+  content: ""; }
+
+.icon-medal:before {
+  content: ""; }
+
+.icon-medical-drip:before {
+  content: ""; }
+
+.icon-medical-square-full:before {
+  content: ""; }
+
+.icon-medical-square:before {
+  content: ""; }
+
+.icon-medium-m:before {
+  content: ""; }
+
+.icon-medkit:before {
+  content: ""; }
+
+.icon-meeting-board:before {
+  content: ""; }
+
+.icon-megaphone:before {
+  content: ""; }
+
+.icon-meh-alt:before {
+  content: ""; }
+
+.icon-meh-closed-eye:before {
+  content: ""; }
+
+.icon-meh:before {
+  content: ""; }
+
+.icon-message:before {
+  content: ""; }
+
+.icon-metro:before {
+  content: ""; }
+
+.icon-microphone-slash:before {
+  content: ""; }
+
+.icon-microphone:before {
+  content: ""; }
+
+.icon-microscope:before {
+  content: ""; }
+
+.icon-minimize-short:before {
+  content: ""; }
+
+.icon-minus-circle:before {
+  content: ""; }
+
+.icon-minus-path:before {
+  content: ""; }
+
+.icon-minus-square-full:before {
+  content: ""; }
+
+.icon-minus-square:before {
+  content: ""; }
+
+.icon-minus:before {
+  content: ""; }
+
+.icon-missed-call:before {
+  content: ""; }
+
+.icon-mobile-android-alt:before {
+  content: ""; }
+
+.icon-mobile-android:before {
+  content: ""; }
+
+.icon-mobile-vibrate:before {
+  content: ""; }
+
+.icon-modem:before {
+  content: ""; }
+
+.icon-money-bill-slash:before {
+  content: ""; }
+
+.icon-money-bill-stack:before {
+  content: ""; }
+
+.icon-money-bill:before {
+  content: ""; }
+
+.icon-money-insert:before {
+  content: ""; }
+
+.icon-money-stack:before {
+  content: ""; }
+
+.icon-money-withdraw:before {
+  content: ""; }
+
+.icon-money-withdrawal:before {
+  content: ""; }
+
+.icon-moneybag-alt:before {
+  content: ""; }
+
+.icon-moneybag:before {
+  content: ""; }
+
+.icon-monitor-heart-rate:before {
+  content: ""; }
+
+.icon-monitor:before {
+  content: ""; }
+
+.icon-moon-eclipse:before {
+  content: ""; }
+
+.icon-moon:before {
+  content: ""; }
+
+.icon-moonset:before {
+  content: ""; }
+
+.icon-mountains-sun:before {
+  content: ""; }
+
+.icon-mountains:before {
+  content: ""; }
+
+.icon-mouse-alt-2:before {
+  content: ""; }
+
+.icon-mouse-alt:before {
+  content: ""; }
+
+.icon-mouse:before {
+  content: ""; }
+
+.icon-multiply:before {
+  content: ""; }
+
+.icon-music-note:before {
+  content: ""; }
+
+.icon-music-tune-slash:before {
+  content: ""; }
+
+.icon-music:before {
+  content: ""; }
+
+.icon-n-a:before {
+  content: ""; }
+
+.icon-navigator:before {
+  content: ""; }
+
+.icon-nerd:before {
+  content: ""; }
+
+.icon-newspaper:before {
+  content: ""; }
+
+.icon-ninja:before {
+  content: ""; }
+
+.icon-no-entry:before {
+  content: ""; }
+
+.icon-notebooks:before {
+  content: ""; }
+
+.icon-notes:before {
+  content: ""; }
+
+.icon-object-group:before {
+  content: ""; }
+
+.icon-object-ungroup:before {
+  content: ""; }
+
+.icon-octagon:before {
+  content: ""; }
+
+.icon-opera-alt:before {
+  content: ""; }
+
+.icon-opera:before {
+  content: ""; }
+
+.icon-outgoing-call:before {
+  content: ""; }
+
+.icon-package:before {
+  content: ""; }
+
+.icon-padlock:before {
+  content: ""; }
+
+.icon-paint-tool:before {
+  content: ""; }
+
+.icon-palette:before {
+  content: ""; }
+
+.icon-panel-add:before {
+  content: ""; }
+
+.icon-panorama-h-alt:before {
+  content: ""; }
+
+.icon-panorama-h:before {
+  content: ""; }
+
+.icon-panorama-v:before {
+  content: ""; }
+
+.icon-paperclip:before {
+  content: ""; }
+
+.icon-paragraph:before {
+  content: ""; }
+
+.icon-parcel:before {
+  content: ""; }
+
+.icon-parking-circle:before {
+  content: ""; }
+
+.icon-parking-square:before {
+  content: ""; }
+
+.icon-Path:before {
+  content: ""; }
+
+.icon-pathfinder-unite:before {
+  content: ""; }
+
+.icon-pathfinder:before {
+  content: ""; }
+
+.icon-pause-circle:before {
+  content: ""; }
+
+.icon-pause:before {
+  content: ""; }
+
+.icon-paypal:before {
+  content: ""; }
+
+.icon-pen:before {
+  content: ""; }
+
+.icon-pentagon:before {
+  content: ""; }
+
+.icon-percentage:before {
+  content: ""; }
+
+.icon-phone-alt:before {
+  content: ""; }
+
+.icon-phone-pause:before {
+  content: ""; }
+
+.icon-phone-slash:before {
+  content: ""; }
+
+.icon-phone-times:before {
+  content: ""; }
+
+.icon-phone-volume:before {
+  content: ""; }
+
+.icon-phone:before {
+  content: ""; }
+
+.icon-picture:before {
+  content: ""; }
+
+.icon-pizza-slice:before {
+  content: ""; }
+
+.icon-plane-arrival:before {
+  content: ""; }
+
+.icon-plane-departure:before {
+  content: ""; }
+
+.icon-plane-fly:before {
+  content: ""; }
+
+.icon-plane:before {
+  content: ""; }
+
+.icon-play-circle:before {
+  content: ""; }
+
+.icon-play:before {
+  content: ""; }
+
+.icon-plug:before {
+  content: ""; }
+
+.icon-plus-circle:before {
+  content: ""; }
+
+.icon-plus-square:before {
+  content: ""; }
+
+.icon-plus3:before {
+  content: ""; }
+
+.icon-podium:before {
+  content: ""; }
+
+.icon-polygon:before {
+  content: ""; }
+
+.icon-post-stamp:before {
+  content: ""; }
+
+.icon-postcard:before {
+  content: ""; }
+
+.icon-pound-circle:before {
+  content: ""; }
+
+.icon-pound:before {
+  content: ""; }
+
+.icon-power:before {
+  content: ""; }
+
+.icon-prescription-bottle:before {
+  content: ""; }
+
+.icon-presentation-check:before {
+  content: ""; }
+
+.icon-presentation-edit:before {
+  content: ""; }
+
+.icon-presentation-line:before {
+  content: ""; }
+
+.icon-presentation-lines-alt:before {
+  content: ""; }
+
+.icon-presentation-minus:before {
+  content: ""; }
+
+.icon-presentation-play:before {
+  content: ""; }
+
+.icon-presentation-plus:before {
+  content: ""; }
+
+.icon-presentation-times:before {
+  content: ""; }
+
+.icon-presentation:before {
+  content: ""; }
+
+.icon-previous:before {
+  content: ""; }
+
+.icon-pricetag-alt:before {
+  content: ""; }
+
+.icon-print-slash:before {
+  content: ""; }
+
+.icon-print:before {
+  content: ""; }
+
+.icon-process:before {
+  content: ""; }
+
+.icon-processor:before {
+  content: ""; }
+
+.icon-pump:before {
+  content: ""; }
+
+.icon-puzzle-piece:before {
+  content: ""; }
+
+.icon-qrcode-scan:before {
+  content: ""; }
+
+.icon-question-circle:before {
+  content: ""; }
+
+.icon-rainbow:before {
+  content: ""; }
+
+.icon-raindrops-alt:before {
+  content: ""; }
+
+.icon-raindrops:before {
+  content: ""; }
+
+.icon-react:before {
+  content: ""; }
+
+.icon-receipt-alt:before {
+  content: ""; }
+
+.icon-receipt:before {
+  content: ""; }
+
+.icon-record-audio:before {
+  content: ""; }
+
+.icon-reddit-alien-alt:before {
+  content: ""; }
+
+.icon-redo:before {
+  content: ""; }
+
+.icon-refresh:before {
+  content: ""; }
+
+.icon-registered:before {
+  content: ""; }
+
+.icon-repeat:before {
+  content: ""; }
+
+.icon-restaurant:before {
+  content: ""; }
+
+.icon-right-indent-alt:before {
+  content: ""; }
+
+.icon-right-to-left-text-direction:before {
+  content: ""; }
+
+.icon-robot:before {
+  content: ""; }
+
+.icon-rocket:before {
+  content: ""; }
+
+.icon-rope-way:before {
+  content: ""; }
+
+.icon-rotate-360:before {
+  content: ""; }
+
+.icon-rss-alt:before {
+  content: ""; }
+
+.icon-rss-interface:before {
+  content: ""; }
+
+.icon-rss:before {
+  content: ""; }
+
+.icon-ruler-combined:before {
+  content: ""; }
+
+.icon-ruler:before {
+  content: ""; }
+
+.icon-rupee-sign:before {
+  content: ""; }
+
+.icon-sad-cry:before {
+  content: ""; }
+
+.icon-sad-crying:before {
+  content: ""; }
+
+.icon-sad-dizzy:before {
+  content: ""; }
+
+.icon-sad-squint:before {
+  content: ""; }
+
+.icon-sad:before {
+  content: ""; }
+
+.icon-sanitizer-alt:before {
+  content: ""; }
+
+.icon-sanitizer:before {
+  content: ""; }
+
+.icon-save:before {
+  content: ""; }
+
+.icon-scaling-left:before {
+  content: ""; }
+
+.icon-scaling-right:before {
+  content: ""; }
+
+.icon-scenery:before {
+  content: ""; }
+
+.icon-schedule:before {
+  content: ""; }
+
+.icon-screw:before {
+  content: ""; }
+
+.icon-scroll-h:before {
+  content: ""; }
+
+.icon-scroll:before {
+  content: ""; }
+
+.icon-search-alt:before {
+  content: ""; }
+
+.icon-search-minus:before {
+  content: ""; }
+
+.icon-search-plus:before {
+  content: ""; }
+
+.icon-search:before {
+  content: ""; }
+
+.icon-selfie:before {
+  content: ""; }
+
+.icon-server-alt:before {
+  content: ""; }
+
+.icon-server-connection:before {
+  content: ""; }
+
+.icon-server-network-alt:before {
+  content: ""; }
+
+.icon-server-network:before {
+  content: ""; }
+
+.icon-server:before {
+  content: ""; }
+
+.icon-servers:before {
+  content: ""; }
+
+.icon-servicemark:before {
+  content: ""; }
+
+.icon-setting:before {
+  content: ""; }
+
+.icon-share-alt:before {
+  content: ""; }
+
+.icon-share:before {
+  content: ""; }
+
+.icon-shield-check:before {
+  content: ""; }
+
+.icon-shield-exclamation:before {
+  content: ""; }
+
+.icon-shield-plus:before {
+  content: ""; }
+
+.icon-shield-question:before {
+  content: ""; }
+
+.icon-shield-slash:before {
+  content: ""; }
+
+.icon-shield:before {
+  content: ""; }
+
+.icon-ship:before {
+  content: ""; }
+
+.icon-shop:before {
+  content: ""; }
+
+.icon-shopping-bag:before {
+  content: ""; }
+
+.icon-shopping-basket:before {
+  content: ""; }
+
+.icon-shopping-cart-alt:before {
+  content: ""; }
+
+.icon-shopping-cart:before {
+  content: ""; }
+
+.icon-shovel:before {
+  content: ""; }
+
+.icon-shrink:before {
+  content: ""; }
+
+.icon-shuffle:before {
+  content: ""; }
+
+.icon-shutter-alt:before {
+  content: ""; }
+
+.icon-shutter:before {
+  content: ""; }
+
+.icon-sick:before {
+  content: ""; }
+
+.icon-sigma:before {
+  content: ""; }
+
+.icon-sign-alt:before {
+  content: ""; }
+
+.icon-sign-in-alt:before {
+  content: ""; }
+
+.icon-sign-left:before {
+  content: ""; }
+
+.icon-sign-out-alt:before {
+  content: ""; }
+
+.icon-sign-right:before {
+  content: ""; }
+
+.icon-signal-alt-3:before {
+  content: ""; }
+
+.icon-signal-alt:before {
+  content: ""; }
+
+.icon-signal:before {
+  content: ""; }
+
+.icon-signin:before {
+  content: ""; }
+
+.icon-silence:before {
+  content: ""; }
+
+.icon-silent-squint:before {
+  content: ""; }
+
+.icon-sim-card:before {
+  content: ""; }
+
+.icon-sitemap:before {
+  content: ""; }
+
+.icon-skip-forward-alt:before {
+  content: ""; }
+
+.icon-skip-forward-circle:before {
+  content: ""; }
+
+.icon-skip-forward:before {
+  content: ""; }
+
+.icon-skype-alt:before {
+  content: ""; }
+
+.icon-skype:before {
+  content: ""; }
+
+.icon-slack-alt:before {
+  content: ""; }
+
+.icon-slack:before {
+  content: ""; }
+
+.icon-sliders-v-alt:before {
+  content: ""; }
+
+.icon-sliders-v:before {
+  content: ""; }
+
+.icon-smile-beam:before {
+  content: ""; }
+
+.icon-smile-dizzy:before {
+  content: ""; }
+
+.icon-smile-squint-wink-alt:before {
+  content: ""; }
+
+.icon-smile-squint-wink:before {
+  content: ""; }
+
+.icon-smile-wink-alt:before {
+  content: ""; }
+
+.icon-smile-wink:before {
+  content: ""; }
+
+.icon-smile:before {
+  content: ""; }
+
+.icon-snapchat-alt:before {
+  content: ""; }
+
+.icon-snapchat-ghost:before {
+  content: ""; }
+
+.icon-snapchat-square:before {
+  content: ""; }
+
+.icon-snow-flake:before {
+  content: ""; }
+
+.icon-snowflake-alt:before {
+  content: ""; }
+
+.icon-snowflake:before {
+  content: ""; }
+
+.icon-social-distancing:before {
+  content: ""; }
+
+.icon-sort-amount-down:before {
+  content: ""; }
+
+.icon-sort-amount-up:before {
+  content: ""; }
+
+.icon-sort:before {
+  content: ""; }
+
+.icon-sorting:before {
+  content: ""; }
+
+.icon-space-key:before {
+  content: ""; }
+
+.icon-spade:before {
+  content: ""; }
+
+.icon-sperms:before {
+  content: ""; }
+
+.icon-spin:before {
+  content: ""; }
+
+.icon-square-full:before {
+  content: ""; }
+
+.icon-square-shape:before {
+  content: ""; }
+
+.icon-square:before {
+  content: ""; }
+
+.icon-squint:before {
+  content: ""; }
+
+.icon-star-filled:before {
+  content: ""; }
+
+.icon-star-half-alt:before {
+  content: ""; }
+
+.icon-star:before {
+  content: ""; }
+
+.icon-step-backward-alt:before {
+  content: ""; }
+
+.icon-step-backward-circle:before {
+  content: ""; }
+
+.icon-step-backward:before {
+  content: ""; }
+
+.icon-step-forward:before {
+  content: ""; }
+
+.icon-stethoscope-alt:before {
+  content: ""; }
+
+.icon-stethoscope:before {
+  content: ""; }
+
+.icon-stop-circle:before {
+  content: ""; }
+
+.icon-stopwatch-slash:before {
+  content: ""; }
+
+.icon-stopwatch:before {
+  content: ""; }
+
+.icon-store-alt:before {
+  content: ""; }
+
+.icon-store-slash:before {
+  content: ""; }
+
+.icon-store:before {
+  content: ""; }
+
+.icon-streering:before {
+  content: ""; }
+
+.icon-stretcher:before {
+  content: ""; }
+
+.icon-subject:before {
+  content: ""; }
+
+.icon-subway-alt:before {
+  content: ""; }
+
+.icon-subway:before {
+  content: ""; }
+
+.icon-suitcase-alt:before {
+  content: ""; }
+
+.icon-suitcase:before {
+  content: ""; }
+
+.icon-sun:before {
+  content: ""; }
+
+.icon-sunset:before {
+  content: ""; }
+
+.icon-surprise:before {
+  content: ""; }
+
+.icon-swatchbook:before {
+  content: ""; }
+
+.icon-swiggy:before {
+  content: ""; }
+
+.icon-swimmer:before {
+  content: ""; }
+
+.icon-sync-exclamation:before {
+  content: ""; }
+
+.icon-sync-slash:before {
+  content: ""; }
+
+.icon-sync:before {
+  content: ""; }
+
+.icon-syringe:before {
+  content: ""; }
+
+.icon-table-tennis:before {
+  content: ""; }
+
+.icon-table:before {
+  content: ""; }
+
+.icon-tablet:before {
+  content: ""; }
+
+.icon-tablets:before {
+  content: ""; }
+
+.icon-tachometer-fast-alt:before {
+  content: ""; }
+
+.icon-tachometer-fast:before {
+  content: ""; }
+
+.icon-tag-alt:before {
+  content: ""; }
+
+.icon-tag:before {
+  content: ""; }
+
+.icon-tape:before {
+  content: ""; }
+
+.icon-taxi:before {
+  content: ""; }
+
+.icon-tear:before {
+  content: ""; }
+
+.icon-telegram-alt:before {
+  content: ""; }
+
+.icon-telegram:before {
+  content: ""; }
+
+.icon-telescope:before {
+  content: ""; }
+
+.icon-temperature-empty:before {
+  content: ""; }
+
+.icon-temperature-half:before {
+  content: ""; }
+
+.icon-temperature-minus:before {
+  content: ""; }
+
+.icon-temperature-plus:before {
+  content: ""; }
+
+.icon-temperature-quarter:before {
+  content: ""; }
+
+.icon-temperature-three-quarter:before {
+  content: ""; }
+
+.icon-temperature:before {
+  content: ""; }
+
+.icon-tennis-ball:before {
+  content: ""; }
+
+.icon-text-fields:before {
+  content: ""; }
+
+.icon-text-size:before {
+  content: ""; }
+
+.icon-text-strike-through:before {
+  content: ""; }
+
+.icon-text:before {
+  content: ""; }
+
+.icon-th-large:before {
+  content: ""; }
+
+.icon-th-slash:before {
+  content: ""; }
+
+.icon-th:before {
+  content: ""; }
+
+.icon-thermometer:before {
+  content: ""; }
+
+.icon-thumbs-down:before {
+  content: ""; }
+
+.icon-thumbs-up:before {
+  content: ""; }
+
+.icon-thunderstorm-moon:before {
+  content: ""; }
+
+.icon-thunderstorm-sun:before {
+  content: ""; }
+
+.icon-thunderstorm:before {
+  content: ""; }
+
+.icon-ticket:before {
+  content: ""; }
+
+.icon-times-circle:before {
+  content: ""; }
+
+.icon-times-square:before {
+  content: ""; }
+
+.icon-times:before {
+  content: ""; }
+
+.icon-toggle-off:before {
+  content: ""; }
+
+.icon-toggle-on:before {
+  content: ""; }
+
+.icon-toilet-paper:before {
+  content: ""; }
+
+.icon-top-arrow-from-top:before {
+  content: ""; }
+
+.icon-top-arrow-to-top:before {
+  content: ""; }
+
+.icon-tornado:before {
+  content: ""; }
+
+.icon-trademark-circle:before {
+  content: ""; }
+
+.icon-trademark:before {
+  content: ""; }
+
+.icon-traffic-barrier:before {
+  content: ""; }
+
+.icon-traffic-light:before {
+  content: ""; }
+
+.icon-transaction:before {
+  content: ""; }
+
+.icon-trash-alt-1:before {
+  content: ""; }
+
+.icon-trash-alt:before {
+  content: ""; }
+
+.icon-trash:before {
+  content: ""; }
+
+.icon-trees:before {
+  content: ""; }
+
+.icon-triangle:before {
+  content: ""; }
+
+.icon-trophy:before {
+  content: ""; }
+
+.icon-trowel:before {
+  content: ""; }
+
+.icon-truck-loading:before {
+  content: ""; }
+
+.icon-truck:before {
+  content: ""; }
+
+.icon-tumblr-alt:before {
+  content: ""; }
+
+.icon-tumblr-square:before {
+  content: ""; }
+
+.icon-tumblr:before {
+  content: ""; }
+
+.icon-tv-retro-slash:before {
+  content: ""; }
+
+.icon-tv-retro:before {
+  content: ""; }
+
+.icon-twitter-alt:before {
+  content: ""; }
+
+.icon-twitter:before {
+  content: ""; }
+
+.icon-umbrella:before {
+  content: ""; }
+
+.icon-unamused:before {
+  content: ""; }
+
+.icon-underline:before {
+  content: ""; }
+
+.icon-university:before {
+  content: ""; }
+
+.icon-unlock-alt:before {
+  content: ""; }
+
+.icon-unlock:before {
+  content: ""; }
+
+.icon-upload-alt:before {
+  content: ""; }
+
+.icon-upload:before {
+  content: ""; }
+
+.icon-usd-circle:before {
+  content: ""; }
+
+.icon-usd-square:before {
+  content: ""; }
+
+.icon-user-arrows:before {
+  content: ""; }
+
+.icon-user-check:before {
+  content: ""; }
+
+.icon-user-circle:before {
+  content: ""; }
+
+.icon-user-exclamation:before {
+  content: ""; }
+
+.icon-user-location:before {
+  content: ""; }
+
+.icon-user-md:before {
+  content: ""; }
+
+.icon-user-minus:before {
+  content: ""; }
+
+.icon-user-nurse:before {
+  content: ""; }
+
+.icon-user-plus:before {
+  content: ""; }
+
+.icon-user-square:before {
+  content: ""; }
+
+.icon-user-times:before {
+  content: ""; }
+
+.icon-user:before {
+  content: ""; }
+
+.icon-users-alt:before {
+  content: ""; }
+
+.icon-utensils-alt:before {
+  content: ""; }
+
+.icon-utensils:before {
+  content: ""; }
+
+.icon-vector-square-alt:before {
+  content: ""; }
+
+.icon-vector-square:before {
+  content: ""; }
+
+.icon-venus:before {
+  content: ""; }
+
+.icon-vertical-align-bottom:before {
+  content: ""; }
+
+.icon-vertical-align-center:before {
+  content: ""; }
+
+.icon-vertical-align-top:before {
+  content: ""; }
+
+.icon-vertical-distribute-bottom:before {
+  content: ""; }
+
+.icon-vertical-distribution-center:before {
+  content: ""; }
+
+.icon-vertical-distribution-top:before {
+  content: ""; }
+
+.icon-video-slash:before {
+  content: ""; }
+
+.icon-video:before {
+  content: ""; }
+
+.icon-virus-slash:before {
+  content: ""; }
+
+.icon-visual-studio:before {
+  content: ""; }
+
+.icon-vk-alt:before {
+  content: ""; }
+
+.icon-vk:before {
+  content: ""; }
+
+.icon-voicemail-rectangle:before {
+  content: ""; }
+
+.icon-voicemail:before {
+  content: ""; }
+
+.icon-volleyball:before {
+  content: ""; }
+
+.icon-volume-down:before {
+  content: ""; }
+
+.icon-volume-mute:before {
+  content: ""; }
+
+.icon-volume-off:before {
+  content: ""; }
+
+.icon-volume-up:before {
+  content: ""; }
+
+.icon-volume:before {
+  content: ""; }
+
+.icon-vuejs-alt:before {
+  content: ""; }
+
+.icon-vuejs:before {
+  content: ""; }
+
+.icon-wall:before {
+  content: ""; }
+
+.icon-wallet:before {
+  content: ""; }
+
+.icon-watch-alt:before {
+  content: ""; }
+
+.icon-watch:before {
+  content: ""; }
+
+.icon-water-drop-slash:before {
+  content: ""; }
+
+.icon-water-glass:before {
+  content: ""; }
+
+.icon-water:before {
+  content: ""; }
+
+.icon-web-grid-alt:before {
+  content: ""; }
+
+.icon-web-grid:before {
+  content: ""; }
+
+.icon-web-section-alt:before {
+  content: ""; }
+
+.icon-web-section:before {
+  content: ""; }
+
+.icon-webcam:before {
+  content: ""; }
+
+.icon-weight:before {
+  content: ""; }
+
+.icon-whatsapp-alt:before {
+  content: ""; }
+
+.icon-whatsapp:before {
+  content: ""; }
+
+.icon-wheel-barrow:before {
+  content: ""; }
+
+.icon-wheelchair-alt:before {
+  content: ""; }
+
+.icon-wheelchair:before {
+  content: ""; }
+
+.icon-wifi-router:before {
+  content: ""; }
+
+.icon-wifi-slash:before {
+  content: ""; }
+
+.icon-wifi:before {
+  content: ""; }
+
+.icon-wind-moon:before {
+  content: ""; }
+
+.icon-wind-sun:before {
+  content: ""; }
+
+.icon-wind:before {
+  content: ""; }
+
+.icon-window-grid:before {
+  content: ""; }
+
+.icon-window-maximize:before {
+  content: ""; }
+
+.icon-window-section:before {
+  content: ""; }
+
+.icon-window:before {
+  content: ""; }
+
+.icon-windsock:before {
+  content: ""; }
+
+.icon-windy:before {
+  content: ""; }
+
+.icon-wrap-text:before {
+  content: ""; }
+
+.icon-wrench:before {
+  content: ""; }
+
+.icon-x-add:before {
+  content: ""; }
+
+.icon-x:before {
+  content: ""; }
+
+.icon-yen-circle:before {
+  content: ""; }
+
+.icon-yen:before {
+  content: ""; }
+
+.icon-yin-yang:before {
+  content: ""; }
+
+.icon-youtube:before {
+  content: ""; }
+
+/* || ===
+
+= Basar Labs 2021
+= FONTS
+
+=== || */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  src: url("../fonts/IBMPlexSansArabic-Light.eot");
+  src: url("../fonts/IBMPlexSansArabic-Light.woff2") format("woff2"), url("../fonts/IBMPlexSansArabic-Light.woff") format("woff"), url("../fonts/IBMPlexSansArabic-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  src: url("../fonts/IBMPlexSansArabic-Medium.eot");
+  src: url("../fonts/IBMPlexSansArabic-Medium.woff2") format("woff2"), url("../fonts/IBMPlexSansArabic-Medium.woff") format("woff"), url("../fonts/IBMPlexSansArabic-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  src: url("../fonts/IBMPlexSansArabic-bold.eot");
+  src: url("../fonts/IBMPlexSansArabic-bold.woff2") format("woff2"), url("../fonts/IBMPlexSansArabic-bold.woff") format("woff"), url("../fonts/IBMPlexSansArabic-bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; }
+/* || ===
+
+= Basar Labs 2021
+= VISIBILTY
+
+=== || */
+.dis-block, .hide.active {
+  display: block; }
+
+.dis-inline {
+  display: inline; }
+
+.dis-inline-block {
+  display: inline-block; }
+
+.dis-none {
+  display: none; }
+
+.visible {
+  visibility: visible; }
+
+.nvisible {
+  visibility: hidden; }
+
+.over-hidden {
+  overflow: hidden; }
+
+.relative-index {
+  position: relative;
+  z-index: 7; }
+
+.relative-index-2 {
+  position: relative;
+  z-index: 4; }
+
+/* || ===
+
+= Basar Labs 2021
+= BUTTONS LAYOUT
+
+=== || */
+button {
+  background: transparent;
+  border: none; }
+
+.btn {
+  border-radius: 0.6252rem;
+  padding: 0 1.3rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none; }
+  .btn.shad {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.04); }
+  .btn.brderd-hvr {
+    transition: 0.2s all;
+    border: 2px solid transparent; }
+    .btn.brderd-hvr:hover {
+      background: transparent;
+      border: 2px solid; }
+  .btn.with-shadow {
+    position: relative; }
+    .btn.with-shadow:before, .btn.with-shadow:after {
+      position: absolute;
+      width: 0px;
+      height: 4px;
+      content: "";
+      display: block;
+      left: 50%;
+      background: #fff; }
+    .btn.with-shadow:before {
+      top: -4px; }
+    .btn.with-shadow:afrer {
+      bottom: -4px; }
+    .btn.with-shadow:hover:before, .btn.with-shadow:hover:after {
+      width: 40%;
+      left: 30%; }
+    .btn.with-shadow.txt-brand-hvr:before, .btn.with-shadow.txt-brand-hvr:after {
+      background: #19AF94; }
+  .btn.lr {
+    height: 3.75rem;
+    line-height: 3.75rem; }
+    .btn.lr.circ {
+      border-radius: 3.75rem; }
+    @media screen and (max-width: 39.9375em) {
+      .btn.lr {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem; } }
+  .btn.md {
+    height: 3.125rem;
+    line-height: 3.125rem; }
+    .btn.md.circ {
+      border-radius: 3.125rem; }
+  .btn.sm {
+    height: 2.5rem;
+    line-height: 2.5rem; }
+    .btn.sm.circ {
+      border-radius: 2.5rem; }
+  .btn.resp {
+    width: 100%; }
+    @media screen and (min-width: 40em) {
+      .btn.resp {
+        width: auto; } }
+  .btn.no-brds {
+    border-radius: 0px; }
+  .btn.no-line {
+    line-height: inherit; }
+  .btn.no-shdw {
+    box-shadow: none; }
+  .btn.brds {
+    border-radius: 0.6252rem; }
+  .btn[disabled] {
+    background: #F8F9F9; }
+  .btn.with-icon svg, .btn.with-icon i {
+    float: left;
+    position: relative;
+    margin-right: 0.3125rem; }
+  .btn.with-icon.right-icon i {
+    margin-right: 0;
+    margin-left: 0.625rem;
+    float: right; }
+  .btn.arrow {
+    overflow: hidden; }
+    .btn.arrow i {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: block;
+      top: 0px;
+      left: -100%;
+      text-align: center; }
+      .btn.arrow i:before {
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        display: block;
+        line-height: 60px;
+        color: #fff; }
+    .btn.arrow:before {
+      display: block;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 0px;
+      background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%);
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px; }
+    .btn.arrow:hover {
+      background: transparent; }
+      .btn.arrow:hover span {
+        opacity: 0; }
+      .btn.arrow:hover:before {
+        width: 100%; }
+      .btn.arrow:hover i {
+        left: 0px; }
+    .btn.arrow.lr i:before {
+      line-height: 70px; }
+  .btn.circle {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 0px;
+    line-height: 51px; }
+    .btn.circle.bg-gr.hvrplay {
+      position: relative; }
+      .btn.circle.bg-gr.hvrplay:after, .btn.circle.bg-gr.hvrplay:before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        z-index: -1;
+        background: linear-gradient(90deg, #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+        top: 0px;
+        left: 0px;
+        border-radius: 50%;
+        opacity: 0; }
+      .btn.circle.bg-gr.hvrplay:hover:after, .btn.circle.bg-gr.hvrplay.activeplay:after {
+        animation: 0.8s counterclockwise infinite;
+        background: linear-gradient(90deg, #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+        opacity: 1; }
+      .btn.circle.bg-gr.hvrplay:hover:before, .btn.circle.bg-gr.hvrplay.activeplay:before {
+        animation: 0.5s clockwise infinite;
+        background: linear-gradient(90deg, #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+        opacity: 1; }
+    .btn.circle i:before {
+      font-size: 28px; }
+    .btn.circle.big-icon i:before {
+      font-size: 32px; }
+    .btn.circle.lr {
+      height: 70px;
+      width: 70px;
+      line-height: 71px; }
+    .btn.circle.gr-hvr {
+      overflow: hidden; }
+      .btn.circle.gr-hvr:before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%);
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        border-radius: 50%;
+        z-index: 1; }
+      .btn.circle.gr-hvr i {
+        position: relative;
+        z-index: 2; }
+      .btn.circle.gr-hvr:hover i {
+        color: #fff; }
+      .btn.circle.gr-hvr:hover:before {
+        left: 0px; }
+  .btn.vertical {
+    display: block;
+    position: absolute;
+    right: 0px;
+    border-radius: 5px;
+    height: 600px;
+    width: 30px;
+    padding: 30px;
+    background: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%);
+    color: #fff; }
+    .btn.vertical:hover {
+      background: #fff; }
+    .btn.vertical i {
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      width: 100%;
+      text-align: center; }
+  .btn.full-width {
+    display: block;
+    border-radius: 0.6252rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 50%, #fff 100%);
+    color: #fff; }
+    .btn.full-width:hover {
+      background: #fff; }
+    .btn.full-width i {
+      width: 100%;
+      text-align: center; }
+
+.load-more-area, .big-button {
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem; }
+  .load-more-area #link, .big-button #link {
+    height: auto;
+    display: block; }
+    .load-more-area #link #loadmore, .load-more-area #link #action, .big-button #link #loadmore, .big-button #link #action {
+      display: inline-block;
+      background: #19AF94;
+      color: #090817;
+      padding: 1rem;
+      padding-right: 2rem;
+      border-radius: 0.6252rem;
+      transition: wdith 0.3s, font-size 0s; }
+      .load-more-area #link #loadmore.bg-brand-hvr:hover, .load-more-area #link #action.bg-brand-hvr:hover, .big-button #link #loadmore.bg-brand-hvr:hover, .big-button #link #action.bg-brand-hvr:hover {
+        background: #19AF94;
+        color: #090817; }
+      .load-more-area #link #loadmore.bg-black, .load-more-area #link #action.bg-black, .big-button #link #loadmore.bg-black, .big-button #link #action.bg-black {
+        background: #090817;
+        color: #fff; }
+      .load-more-area #link #loadmore:hover, .load-more-area #link #action:hover, .big-button #link #loadmore:hover, .big-button #link #action:hover {
+        background: #090817;
+        color: #fff; }
+    .load-more-area #link .spinner, .big-button #link .spinner {
+      margin: 0px;
+      width: 60px;
+      height: 60px;
+      font-size: 0px;
+      background-color: #19AF94;
+      border-radius: 0.6252rem;
+      color: #19AF94;
+      margin: 100px auto;
+      -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+      animation: sk-rotateplane 1.2s infinite ease-in-out; }
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
+.bigCta {
+  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: top;
+  width: 100%;
+  height: 94px;
+  font-size: 20px;
+  text-align: center !important;
+  background: #090817;
+  color: white;
+  justify-content: space-around;
+  padding: 2.5rem 1rem; }
+
+/* || ===
+
+= Basar Labs 2021
+= LOADERS
+
+=== || */
+#progressIndicator {
+  position: fixed;
+  width: 100%;
+  height: 0.25rem;
+  top: 0;
+  transform: translateX(-100%);
+  background-color: #19AF94;
+  z-index: 99; }
+
+/* || ===
+
+= Basar Labs 2021
+= CLEARING & SPACING
+
+=== || */
+/* || ===
+
+= Basar Labs 2021
+= CLEARING & SPACING // Padding
+
+=== || */
+.no-padding {
+  padding: 0; }
+
+.sm-padding {
+  padding: 1rem; }
+
+.md-padding {
+  padding: 1.5rem; }
+
+.lr-padding {
+  padding: 3rem; }
+
+.xl-padding {
+  padding: 4rem; }
+
+.glob-padding, #soon {
+  padding: 2rem; }
+  @media screen and (min-width: 40em) {
+    .glob-padding, #soon {
+      padding: 6rem; } }
+  @media screen and (min-width: 65em) {
+    .glob-padding, #soon {
+      padding: 12rem; } }
+  .glob-padding.no-padding-top, .no-padding-top#soon {
+    padding-top: 0px; }
+
+.glob-hor-padding {
+  padding: 0px 3rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .glob-hor-padding {
+      padding: 0px 6rem; } }
+  @media screen and (min-width: 65em) {
+    .glob-hor-padding {
+      padding: 0px 12rem; } }
+
+.glob-ver-padding {
+  padding: 3rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .glob-ver-padding {
+      padding: 6rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .glob-ver-padding {
+      padding: 12rem 0px; } }
+
+.no-padding-bottom {
+  padding-bottom: 0px; }
+
+.no-padding-top {
+  padding-top: 0px; }
+
+.no-padding-left {
+  padding-left: 0px; }
+
+.no-padding-right {
+  padding-right: 0px; }
+
+.xs-padding-top {
+  padding-top: 0.5rem; }
+
+.sm-padding-top {
+  padding-top: 1rem; }
+
+.md-padding-top {
+  padding-top: 1.5rem; }
+
+.lr-padding-top, #soon footer {
+  padding-top: 3rem; }
+
+.xl-padding-top {
+  padding-top: 4rem; }
+
+.xs-padding-bottom {
+  padding-bottom: 0.5rem; }
+
+.sm-padding-bottom {
+  padding-bottom: 1rem; }
+
+.md-padding-bottom {
+  padding-bottom: 1.5rem; }
+
+.lr-padding-bottom {
+  padding-bottom: 3rem; }
+
+.xl-padding-bottom {
+  padding-bottom: 4rem; }
+
+.xs-padding-left {
+  padding-left: 0.5rem; }
+
+.sm-padding-left {
+  padding-left: 1rem; }
+
+.md-padding-left {
+  padding-left: 1.5rem; }
+
+.lr-padding-left {
+  padding-left: 3rem; }
+
+.xl-padding-left {
+  padding-left: 4rem; }
+
+.xs-padding-right {
+  padding-right: 0.5rem; }
+
+.sm-padding-right {
+  padding-right: 1rem; }
+
+.md-padding-right {
+  padding-right: 1.5rem; }
+
+.lr-padding-right {
+  padding-right: 3rem; }
+
+.xl-padding-right {
+  padding-right: 4rem; }
+
+.lr-ver-padding {
+  padding: 6rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .lr-ver-padding {
+      padding: 12rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .lr-ver-padding {
+      padding: 16rem 0px; } }
+  .lr-ver-padding.hlf-btm {
+    padding: 6rem 0px;
+    padding-bottom: 3rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .lr-ver-padding.hlf-btm {
+        padding: 12rem 0px;
+        padding-bottom: 6rem; } }
+    @media screen and (min-width: 65em) {
+      .lr-ver-padding.hlf-btm {
+        padding: 16rem 0px;
+        padding-bottom: 8rem; } }
+
+.md-ver-padding {
+  padding: 3rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .md-ver-padding {
+      padding: 6rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .md-ver-padding {
+      padding: 12rem 0px; } }
+  .md-ver-padding.hlf-btm {
+    padding: 3rem 0px;
+    padding-bottom: 1.5rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .md-ver-padding.hlf-btm {
+        padding: 6rem 0px;
+        padding-bottom: 3rem; } }
+    @media screen and (min-width: 65em) {
+      .md-ver-padding.hlf-btm {
+        padding: 12rem 0px;
+        padding-bottom: 6rem; } }
+
+.sm-ver-padding {
+  padding: 1.5rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .sm-ver-padding {
+      padding: 3rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .sm-ver-padding {
+      padding: 6rem 0px; } }
+  .sm-ver-padding.hlf-btm {
+    padding: 1.5rem 0px;
+    padding-bottom: 0.75rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .sm-ver-padding.hlf-btm {
+        padding: 3rem 0px;
+        padding-bottom: 1.5rem; } }
+    @media screen and (min-width: 65em) {
+      .sm-ver-padding.hlf-btm {
+        padding: 6rem 0px;
+        padding-bottom: 3rem; } }
+  .sm-ver-padding.sm-btn {
+    padding: 1rem 0px; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .sm-ver-padding.sm-btn {
+        padding: 2rem 0px; } }
+    @media screen and (min-width: 65em) {
+      .sm-ver-padding.sm-btn {
+        padding: 4rem 0px; } }
+
+.lr-hor-padding {
+  padding: 0px 6rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .lr-hor-padding {
+      padding: 0px 12rem; } }
+  @media screen and (min-width: 65em) {
+    .lr-hor-padding {
+      padding: 0px 16rem; } }
+
+.md-hor-padding {
+  padding: 0px 3rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .md-hor-padding {
+      padding: 0px 6rem; } }
+  @media screen and (min-width: 65em) {
+    .md-hor-padding {
+      padding: 0px 12rem; } }
+
+.sm-hor-padding {
+  padding: 0px 1.5rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .sm-hor-padding {
+      padding: 0px 3rem; } }
+  @media screen and (min-width: 65em) {
+    .sm-hor-padding {
+      padding: 0px 6rem; } }
+
+/* || ===
+
+= Basar Labs 2021
+= CLEARING & SPACING // Margin
+
+=== || */
+.no-mar {
+  margin: 0; }
+
+.xs-mar {
+  margin-top: 0.5rem; }
+
+.sm-mar {
+  margin-top: 1rem; }
+
+.md-mar {
+  margin-top: 1.5rem; }
+
+.lr-mar {
+  margin-top: 1.5rem; }
+  @media screen and (min-width: 65em) {
+    .lr-mar {
+      margin-top: 3rem; } }
+
+.xl-mar {
+  margin-top: 2rem; }
+  @media screen and (min-width: 65em) {
+    .xl-mar {
+      margin-top: 4rem; } }
+
+.xxl-mar {
+  margin-top: 3rem; }
+  @media screen and (min-width: 65em) {
+    .xxl-mar {
+      margin-top: 3rem; } }
+
+.xs-mar-bot {
+  margin-bottom: 0.5rem; }
+
+.sm-mar-bot {
+  margin-bottom: 1rem; }
+
+.md-mar-bot {
+  margin-bottom: 1.5rem; }
+
+.lr-mar-bot {
+  margin-bottom: 1.5rem; }
+  @media screen and (min-width: 65em) {
+    .lr-mar-bot {
+      margin-bottom: 3rem; } }
+
+.xl-mar-bot {
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 65em) {
+    .xl-mar-bot {
+      margin-bottom: 4rem; } }
+
+.xs-mar-top {
+  margin-top: 0.5rem; }
+
+.sm-mar-top {
+  margin-top: 1rem; }
+
+.md-mar-top {
+  margin-top: 1.5rem; }
+
+.lr-mar-top {
+  margin-top: 1rem; }
+  @media screen and (min-width: 65em) {
+    .lr-mar-top {
+      margin-top: 3rem; } }
+
+.xl-mar-top {
+  margin-top: 2rem; }
+  @media screen and (min-width: 65em) {
+    .xl-mar-top {
+      margin-top: 4rem; } }
+
+.glob-mar {
+  margin: 2rem; }
+  @media screen and (min-width: 40em) {
+    .glob-mar {
+      margin: 6rem; } }
+  @media screen and (min-width: 65em) {
+    .glob-mar {
+      margin: 12rem; } }
+  .glob-mar.no-mar-top {
+    margin-top: 0px; }
+
+.glob-hor-mar {
+  margin: 0px 3rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .glob-hor-mar {
+      margin: 0px 6rem; } }
+  @media screen and (min-width: 65em) {
+    .glob-hor-mar {
+      margin: 0px 12rem; } }
+
+.glob-ver-mar {
+  margin: 3rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .glob-ver-mar {
+      margin: 6rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .glob-ver-mar {
+      margin: 12rem 0px; } }
+
+.no-mar-bottom {
+  margin-bottom: 0px; }
+
+.no-mar-top {
+  margin-top: 0px; }
+
+.no-mar-left {
+  margin-left: 0px; }
+
+.no-mar-right {
+  margin-right: 0px; }
+
+.xs-mar-top {
+  margin-top: 0.5rem; }
+
+.sm-mar-top {
+  margin-top: 1rem; }
+
+.md-mar-top {
+  margin-top: 1.5rem; }
+
+.lr-mar-top {
+  margin-top: 3rem; }
+
+.xl-mar-top {
+  margin-top: 4rem; }
+
+.xs-mar-bottom {
+  margin-bottom: 0.5rem; }
+
+.sm-mar-bottom {
+  margin-bottom: 1rem; }
+
+.md-mar-bottom, #soon h3 {
+  margin-bottom: 1.5rem; }
+
+.lr-mar-bottom {
+  margin-bottom: 3rem; }
+
+.xl-mar-bottom {
+  margin-bottom: 4rem; }
+
+.xs-mar-left {
+  margin-left: 0.5rem; }
+
+.sm-mar-left {
+  margin-left: 1rem; }
+
+.md-mar-left, #soon input {
+  margin-left: 1.5rem; }
+
+.lr-mar-left {
+  margin-left: 3rem; }
+
+.xl-mar-left {
+  margin-left: 4rem; }
+
+.xs-mar-right {
+  margin-right: 0.5rem; }
+
+.sm-mar-right {
+  margin-right: 1rem; }
+
+.md-mar-right {
+  margin-right: 1.5rem; }
+
+.lr-mar-right {
+  margin-right: 3rem; }
+
+.xl-mar-right {
+  margin-right: 4rem; }
+
+.lr-ver-mar {
+  margin: 6rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .lr-ver-mar {
+      margin: 12rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .lr-ver-mar {
+      margin: 16rem 0px; } }
+  .lr-ver-mar.hlf-btm {
+    margin: 6rem 0px;
+    margin-bottom: 3rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .lr-ver-mar.hlf-btm {
+        margin: 12rem 0px;
+        margin-bottom: 6rem; } }
+    @media screen and (min-width: 65em) {
+      .lr-ver-mar.hlf-btm {
+        margin: 16rem 0px;
+        margin-bottom: 8rem; } }
+
+.md-ver-mar {
+  margin: 3rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .md-ver-mar {
+      margin: 6rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .md-ver-mar {
+      margin: 12rem 0px; } }
+  .md-ver-mar.hlf-btm {
+    margin: 3rem 0px;
+    margin-bottom: 1.5rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .md-ver-mar.hlf-btm {
+        margin: 6rem 0px;
+        margin-bottom: 3rem; } }
+    @media screen and (min-width: 65em) {
+      .md-ver-mar.hlf-btm {
+        margin: 12rem 0px;
+        margin-bottom: 6rem; } }
+
+.sm-ver-mar {
+  margin: 1.5rem 0px; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .sm-ver-mar {
+      margin: 3rem 0px; } }
+  @media screen and (min-width: 65em) {
+    .sm-ver-mar {
+      margin: 6rem 0px; } }
+  .sm-ver-mar.hlf-btm {
+    margin: 1.5rem 0px;
+    margin-bottom: 0.75rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .sm-ver-mar.hlf-btm {
+        margin: 3rem 0px;
+        margin-bottom: 1.5rem; } }
+    @media screen and (min-width: 65em) {
+      .sm-ver-mar.hlf-btm {
+        margin: 6rem 0px;
+        margin-bottom: 3rem; } }
+  .sm-ver-mar.sm-btn {
+    margin: 1rem 0px; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .sm-ver-mar.sm-btn {
+        margin: 2rem 0px; } }
+    @media screen and (min-width: 65em) {
+      .sm-ver-mar.sm-btn {
+        margin: 4rem 0px; } }
+
+.lr-hor-mar {
+  margin: 0px 6rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .lr-hor-mar {
+      margin: 0px 12rem; } }
+  @media screen and (min-width: 65em) {
+    .lr-hor-mar {
+      margin: 0px 16rem; } }
+  .lr-hor-mar.hlf-btm {
+    margin: 0px 6rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .lr-hor-mar.hlf-btm {
+        margin: 0px 12rem; } }
+    @media screen and (min-width: 65em) {
+      .lr-hor-mar.hlf-btm {
+        margin: 0px 16rem; } }
+
+.md-hor-mar {
+  margin: 0px 3rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .md-hor-mar {
+      margin: 0px 6rem; } }
+  @media screen and (min-width: 65em) {
+    .md-hor-mar {
+      margin: 0px 12rem; } }
+  .md-hor-mar.hlf-btm {
+    margin: 0px 3rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .md-hor-mar.hlf-btm {
+        margin: 0px 6rem; } }
+    @media screen and (min-width: 65em) {
+      .md-hor-mar.hlf-btm {
+        margin: 0px 12rem; } }
+
+.sm-hor-mar {
+  margin: 0px 1.5rem; }
+  @media screen and (min-width: 40em) and (max-width: 65em) {
+    .sm-hor-mar {
+      margin: 0px 3rem; } }
+  @media screen and (min-width: 65em) {
+    .sm-hor-mar {
+      margin: 0px 6rem; } }
+  .sm-hor-mar.hlf-btm {
+    margin: 0px 1.5rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .sm-hor-mar.hlf-btm {
+        margin: 0px 3rem; } }
+    @media screen and (min-width: 65em) {
+      .sm-hor-mar.hlf-btm {
+        margin: 0px 6rem; } }
+  .sm-hor-mar.sm-btn {
+    margin: 0px 1rem; }
+    @media screen and (min-width: 40em) and (max-width: 65em) {
+      .sm-hor-mar.sm-btn {
+        margin: 0px 2rem; } }
+    @media screen and (min-width: 65em) {
+      .sm-hor-mar.sm-btn {
+        margin: 0px 4rem; } }
+
+.hide {
+  display: none; }
+
+.bx-center {
+  margin: auto;
+  float: none; }
+
+.bx-left {
+  float: left; }
+
+.bx-right {
+  float: right; }
+
+.f-width {
+  width: 100%;
+  max-width: 100%; }
+
+.half-width {
+  width: 100%; }
+  @media screen and (min-width: 65em) {
+    .half-width {
+      width: 50%; } }
+
+.max50 {
+  max-width: 50%; }
+
+.max60 {
+  max-width: 60%; }
+
+.max70 {
+  max-width: 70%; }
+
+.max80 {
+  max-width: 80%; }
+
+.max90 {
+  max-width: 90%; }
+
+.w80 {
+  width: 80%; }
+
+.w100, input:not(.skeleton), textarea, #soon footer {
+  width: 100%; }
+
+.same-height {
+  display: inline-block;
+  width: 100%; }
+  @media screen and (min-width: 65em) {
+    .same-height {
+      display: table; } }
+  .same-height .col {
+    display: table-cell; }
+
+/* || ===
+
+= Basar Labs 2021
+= SOCIAL
+
+=== || */
+/* || ===
+
+= Basar Labs 2021
+= HEADER
+
+=== || */
+/* || ===
+
+= Basar Labs 2021
+= ALERTS
+
+=== || */
+.alert {
+  position: fixed;
+  max-width: 500px;
+  width: calc(100vw - 60px);
+  z-index: 999; }
+  .alert .msgbox {
+    margin: 0px;
+    opacity: 1; }
+    .alert .msgbox:hover {
+      opacity: 1; }
+  .alert.right.top {
+    top: 30px;
+    right: 30px; }
+  .alert.right.bottom {
+    bottom: 30px;
+    right: 30px; }
+  .alert.left.top {
+    top: 30px;
+    left: 30px; }
+  .alert.left.bottom {
+    bottom: 30px;
+    left: 30px; }
+
+/* || ===
+
+= Basar Labs 2021
+= FORMS 
+
+=== || */
+::placeholder {
+  color: #32304D;
+  opacity: 0.5; }
+
+input:not(.skeleton), textarea {
+  border: #090817 2px solid;
+  padding: 1.2rem;
+  border-radius: 0.6252rem;
+  margin-top: 3px;
+  height: 3.75rem;
+  line-height: 3.75rem; }
+  @media screen and (min-width: 40em) {
+    input:not(.skeleton), textarea {
+      width: 300px; } }
+  input:not(.skeleton):hover, textarea:hover {
+    border: #5B6268 2px solid; }
+  input:not(.skeleton):focus, textarea:focus {
+    border: #19AF94 2px solid; }
+
+/* || ===
+
+= Basar Labs 2021
+= FOOTER
+
+=== || */
+/* || ===
+
+= Dedicated Pages Layout
+
+===================
+||    CONTENT    ||
+===================
+
+01. Soon
+
+
+=== || */
+/* || ===
+
+    = Basar Labs 2021
+
+=== || */
+html {
+  border-right: 0.625rem solid #19AF94 !important;
+  height: 100vh; }
+  html:hover {
+    border-right: 0.625rem solid #19AF94 !important; }
+
+body {
+  background-image: url(../imgs/bg_image.svg);
+  background-position: left top;
+  background-size: auto 100%;
+  background-repeat: no-repeat; }
+
+#soon {
+  display: table;
+  height: 100%;
+  height: calc(100vh - 200px); }
+  #soon .table-cell, #soon .content, #soon .fp-tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 0;
+    position: relative; }
+  #soon .logo {
+    width: 120px; }
+    @media screen and (min-width: 65em) {
+      #soon .logo {
+        width: 200px; } }
+  #soon h2 {
+    max-width: 700px; }
+  #soon h3 i {
+    display: inline-block;
+    position: relative;
+    top: 5px; }
+
+/* || ===
+
+= HOT FIXES ..
+
+===================
+||    CONTENT    ||
+===================
+
+01. WINDOWS
+02. MAC
+
+
+
+=== || */
+/* || ===
+
+= Basar Labs 2021
+= MAC CUSTOME SCSS
+
+=== || */
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,339 @@
+/* || ===
+
+= Basar Labs 2021
+= COLORING
+
+=== || */
+
+    // TEXT COLOR
+    .txt-brand{
+        color: colors(brand);
+    }
+    .txt-brand2{
+        color: colors(brand2);
+    }
+    .txt-cloud{
+        color: colors(cloud);
+    }
+    .txt-silver{
+        color: colors(silver);
+    }
+    .txt-asphalt{
+        color: colors(asphalt);
+    }
+    .txt-black{
+        color: colors(black);
+    }
+    .txt-mdblue{
+        color: colors(mdblue);
+    }
+    .txt-green{
+        color: colors(green);
+    }
+    .txt-orange{
+        color: colors(orange);
+    }
+    .txt-yellow{
+        color: colors(yellow);
+    }
+    .txt-red{
+        color: colors(red);
+    }
+    .txt-white{
+        color: colors(white);
+    }
+    .txt-gr{
+        background: gr(one);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        span{
+            background: gr(one);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+        // TEXT COLORS HOVER ..
+            .txt-brand-hvr{
+                &:hover{
+                    color: colors(brand) ;
+                    *{
+                        color: colors(brand) ;
+                    }
+                }
+
+            }
+            .txt-brand2-hvr{
+                &:hover{
+                    color: colors(brand2) ;
+                    *{
+                        color: colors(brand2) ;
+                    }
+                }
+            }
+            .txt-silver-hvr{
+                &:hover{
+                    color: colors(silver) ;
+                    *{
+                        color: colors(silver) ;
+                    }
+                }
+            }
+            .txt-cloud-hvr{
+                &:hover{
+                    color: colors(cloud) ;
+                    *{
+                        color: colors(cloud) ;
+                    }
+                }
+            }
+            .txt-asphalt-hvr{
+                &:hover{
+                    color: colors(asphalt) ;
+                    *{
+                        color: colors(asphalt) ;
+                    }
+                }
+            }
+            .txt-black-hvr{
+                &:hover{
+                    color: colors(black) ;
+                    *{
+                        color: colors(black) ;
+                    }
+                }
+            }
+            .txt-mdblue-hvr{
+                &:hover{
+                    color: colors(mdblue) ;
+                    *{
+                        color: colors(mdblue) ;
+                    }
+                }
+            }
+            .txt-green-hvr{
+                &:hover{
+                    color: colors(green);
+                    *{
+                        color: colors(green) ;
+                    }
+                }
+            }
+            .txt-red-hvr{
+                &:hover{
+                    color: colors(red) ;
+                    *{
+                        color: colors(red) ;
+                    }
+                }
+            }
+            .txt-white-hvr{
+                &:hover{
+                    color: colors(white) ;
+                    *{
+                        color: colors(white) ;
+                    }
+                }
+            }
+
+
+
+    // BACKGROUND COLOR ..
+    .bg-brand{
+        background: colors(brand);
+
+        .scroll-btn:hover i{
+            background: colors(white);
+        }
+
+        .with-plus{
+            &:hover, &.active{
+              &:after{
+                color: colors(black);
+              }
+            }  
+        }
+
+        .filters-cat{
+            h4{
+                &:before{
+                    background: colors(white) ;
+                }
+            }
+
+            ul{
+                li{
+                    a{
+                        color: colors(black);
+                        &:hover{
+                        color: colors(white);
+                        }
+                    }
+                } 
+            }
+        }
+    }
+    .bg-brand2{
+        background: colors(brand2);
+    }
+    .bg-cloud{
+        background: colors(cloud);
+    }
+    .bg-silver{
+        background: colors(silver);
+    }
+    .bg-asphalt{
+        background: colors(asphalt);
+    }
+    .bg-black{
+        background: colors(black);
+    }
+    .bg-mdblue{
+        background: colors(mdblue);
+    }
+    .bg-green{
+        background: colors(green);
+    }
+    .bg-red{
+        background: colors(red);
+    }
+    .bg-orange{
+        background: colors(orange);
+    }
+    .bg-yellow{
+        background: colors(yellow);
+    }
+    .bg-none{
+        background: transparent;
+    }
+    .bg-white{
+        background: colors(white);
+    }
+    .bg-gr{
+        background: gr(one);
+    }
+
+
+        // BACKGROUND HOVER COLORS ..
+            .bg-brand-hvr:hover{
+                background: colors(brand);
+            }
+            .bg-brand2-hvr:hover{
+                background: colors(brand2);
+            }
+            .bg-cloud-hvr:hover{
+                background: colors(cloud);
+            }
+            .bg-silver-hvr:hover{
+                background: colors(silver);
+            }
+            .bg-asphalt-hvr:hover{
+                background: colors(asphalt);
+            }
+            .bg-black-hvr:hover{
+                background: colors(black);
+            }
+            .bg-black-hvr:hover{
+                background: colors(mdblue);
+            }
+            .bg-green-hvr:hover{
+                background: colors(green);
+            }
+            .bg-red-hvr:hover{
+                background: colors(red);
+            }
+            .bg-none-hvr:hover{
+                background: transparent;
+            }
+            .bg-white-hvr:hover{
+                background: colors(white);
+            }
+
+
+    // Borders Colors .. 
+    .brd-brand{
+        box-shadow: inset 0px 0px 0px 3px colors(brand);
+        &:hover{ @include transition; }       
+    }
+    .brd-gr{
+        box-shadow: inset 0px 0px 0px 3px rgba(255,255,255, 0);
+        &:hover{ @include transition; }       
+    }
+    .brd-cloud{
+        box-shadow: inset 0px 0px 0px 3px colors(cloud);
+        &:hover{ @include transition; }       
+    }
+    .brd-silver{
+        box-shadow: inset 0px 0px 0px 3px colors(silver);
+        &:hover{ @include transition; }  
+    }
+    .brd-asphalt{
+        box-shadow: inset 0px 0px 0px 3px colors(asphalt);
+        &:hover{ @include transition; }       
+    }
+    .brd-black{
+        box-shadow: inset 0px 0px 0px 3px colors(black);
+        &:hover{ @include transition; }       
+    }
+    .brd-mdblue{
+        box-shadow: inset 0px 0px 0px 3px colors(mdblue);
+        &:hover{ @include transition; }       
+    }
+    .brd-green{
+        box-shadow: inset 0px 0px 0px 3px colors(green);
+        &:hover{ @include transition; } 
+    }
+    .brd-red{
+        box-shadow: inset 0px 0px 0px 3px colors(red);
+        &:hover{ @include transition; } 
+    }
+    .brd-orange{
+        box-shadow: inset 0px 0px 0px 3px colors(orange);
+        &:hover{ @include transition; } 
+    }
+    .brd-yellow{
+        box-shadow: inset 0px 0px 0px 3px colors(yellow);
+        &:hover{ @include transition; } 
+    }
+    .brd-white{
+        box-shadow: inset 0px 0px 0px 3px colors(white);
+        &:hover{ @include transition; } 
+    }
+
+
+            // Border Hover .. 
+            .brd-hvr-brand:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(brand);
+            }
+            .brd-hvr-cloud:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(cloud);
+            }
+            .brd-hvr-silver:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(silver);
+            }
+            .brd-hvr-asphalt:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(asphalt);
+            }
+            .brd-hvr-black:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(black);
+            }
+            .brd-hvr-mdblue:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(mdblue);
+            }
+            .brd-hvr-green:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(green);
+            }
+            .brd-hvr-red:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(red);
+            }
+            .brd-hvr-orange:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(orange);
+            }
+            .brd-hvr-yellow:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(yellow);
+            }
+            .brd-hvr-white:hover{
+                box-shadow: inset 0px 0px 0px 100px colors(white);
+            }

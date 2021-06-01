@@ -1,0 +1,231 @@
+/* || ===
+
+= Basar Labs 2021
+= CLEARING & SPACING // Margin
+
+=== || */
+
+
+
+        // margins ..
+        .no-mar{
+          margin: 0;
+        }
+        .xs-mar{
+          margin-top: whitespace(sm)/2;
+        }
+        
+        .sm-mar{
+          margin-top: whitespace(sm);
+        }
+        .md-mar{
+          margin-top: whitespace(md);
+        }
+        .lr-mar{
+          margin-top: whitespace(md);
+          @include grid-media($large-up){
+            margin-top: whitespace(md)*2;
+          }
+        }
+        .xl-mar{
+          margin-top: whitespace(xl)/2;
+          @include grid-media($large-up){
+            margin-top: whitespace(xl);
+          }
+        }
+        .xxl-mar{
+          margin-top: whitespace(lr);
+          @include grid-media($large-up){
+            margin-top: whitespace(lr);
+          }
+        }
+
+        //  mar bottom ..
+        .xs-mar-bot{
+          margin-bottom: whitespace(sm)/2;
+        }
+        .sm-mar-bot{
+          margin-bottom: whitespace(sm);
+        }
+        .md-mar-bot{
+          margin-bottom: whitespace(md);
+        }
+        .lr-mar-bot{
+          margin-bottom: whitespace(md);
+          @include grid-media($large-up){
+          margin-bottom: whitespace(md)*2;
+          }
+        }
+        .xl-mar-bot{
+          margin-bottom: whitespace(xl)/2;
+          @include grid-media($large-up){
+            margin-bottom: whitespace(xl);
+          }
+        }
+
+        //  mar top ..
+        .xs-mar-top{
+          margin-top: whitespace(sm)/2;
+        }
+        .sm-mar-top{
+          margin-top: whitespace(sm);
+        }
+        .md-mar-top{
+          margin-top: whitespace(md);
+        }
+        .lr-mar-top{
+          margin-top: whitespace(sm);
+          @include grid-media($large-up){
+          margin-top: whitespace(md)*2;
+          }
+        }
+        .xl-mar-top{
+          margin-top: whitespace(xl)/2;
+          @include grid-media($large-up){
+            margin-top: whitespace(xl);
+          }
+        }
+
+
+        // Global margin
+        .glob-mar{
+          @include global-margin();
+          
+          &.no-mar-top{
+            margin-top: 0px;
+          }
+        }
+        .glob-hor-mar{
+          @include hor-margin(3,6,12, false);
+        }
+        .glob-ver-mar{
+          @include ver-margin(3,6,12, false);
+        }
+
+        // No padding ..
+        .no-mar-bottom{
+          margin-bottom: 0px;
+        }
+        .no-mar-top{
+          margin-top: 0px;
+        }
+        .no-mar-left{
+          margin-left: 0px;
+        }
+        .no-mar-right{
+          margin-right: 0px;
+        }
+
+        //  padding top ..
+        .xs-mar-top{
+          margin-top: whitespace(sm)/2;
+        }
+        .sm-mar-top{
+          margin-top: whitespace(sm);
+        }
+        .md-mar-top{
+          margin-top: whitespace(md);
+        }
+        .lr-mar-top{
+          margin-top: whitespace(lr);
+        }
+        .xl-mar-top{
+          margin-top: whitespace(xl);
+        }        
+
+        //  padding bottom ..
+        .xs-mar-bottom{
+          margin-bottom: whitespace(sm)/2;
+        }
+        .sm-mar-bottom{
+          margin-bottom: whitespace(sm);
+        }
+        .md-mar-bottom{
+          margin-bottom: whitespace(md);
+        }
+        .lr-mar-bottom{
+          margin-bottom: whitespace(lr);
+        }
+        .xl-mar-bottom{
+          margin-bottom: whitespace(xl);
+        }
+
+        //  padding left ..
+        .xs-mar-left{
+          margin-left: whitespace(sm)/2;
+        }
+        .sm-mar-left{
+          margin-left: whitespace(sm);
+        }
+        .md-mar-left{
+          margin-left: whitespace(md);
+        }
+        .lr-mar-left{
+          margin-left: whitespace(lr);
+        }
+        .xl-mar-left{
+          margin-left: whitespace(xl);
+        }
+
+        //  padding Right ..
+        .xs-mar-right{
+          margin-right: whitespace(sm)/2;
+        }
+        .sm-mar-right{
+          margin-right: whitespace(sm);
+        }
+        .md-mar-right{
+          margin-right: whitespace(md);
+        }
+        .lr-mar-right{
+          margin-right: whitespace(lr);
+        }
+        .xl-mar-right{
+          margin-right: whitespace(xl);
+        }
+
+        // Vertical Only ..
+        .lr-ver-mar{
+            @include ver-margin(6,12,16, false);
+            &.hlf-btm{
+                @include ver-margin(6,12,16, true);
+            }
+        }
+        .md-ver-mar{
+            @include ver-margin(3,6,12, false);
+            &.hlf-btm{
+                @include ver-margin(3,6,12, true);
+            }
+        }
+        .sm-ver-mar{
+            @include ver-margin(1.5,3,6, false);
+            &.hlf-btm{
+                @include ver-margin(1.5,3,6, true);
+            }
+            &.sm-btn{
+              @include ver-margin(1,2,4, false);
+            }
+        }
+
+        // Horizontal Only ..
+        .lr-hor-mar{
+            @include hor-margin(6,12,16,false);
+            &.hlf-btm{
+              @include hor-margin(6,12,16, true);
+          }
+        }
+        .md-hor-mar{
+            @include hor-margin(3,6,12,false);
+            &.hlf-btm{
+              @include hor-margin(3,6,12, true);
+          }
+        }
+        .sm-hor-mar{
+            @include hor-margin(1.5,3,6,false);
+            &.hlf-btm{
+              @include hor-margin(1.5,3,6, true);
+            }
+            &.sm-btn{
+              @include hor-margin(1,2,4, false);
+            }
+        }

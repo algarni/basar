@@ -1,0 +1,459 @@
+/* || ===
+
+= Basar Labs 2021
+= BUTTONS LAYOUT
+
+=== || */
+
+button {
+  background: transparent;
+  border: none;
+}
+
+.btn{
+
+    // DEFULT SETTINGS ..
+    border-radius: $border;
+    padding: 0 #{whitespace(sm)*1.3};
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    
+
+    // Shadows .. 
+    &.shad{
+      box-shadow: shadows(normal);      
+    }
+
+      // Borderd hover
+      &.brderd-hvr{
+        transition: 0.2s all;
+        border: 2px solid transparent;
+        
+        &:hover{
+          background: transparent;
+          border: 2px solid;
+        }
+      }
+
+    &.with-shadow{
+      position: relative;
+      
+      &:before, &:after{
+        position: absolute;
+        width: 0px;
+        height: 4px;
+        content:"";
+        display: block;
+        left: 50%;
+        background: colors(white);
+      }
+
+      &:before{
+        top: -4px;
+      }
+
+      &:afrer{
+        bottom:-4px;
+      }
+
+      &:hover{
+        &:before, &:after{
+          width: 40%;
+          left: 30%;
+        }
+      }
+
+      &.txt-brand-hvr{
+        &:before, &:after{
+          background: colors(brand) ;
+        }
+      }
+
+    }
+
+    // Size ..
+        &.lr{
+          height: $base-height*6;
+          line-height: $base-height*6;
+
+          &.circ{
+            border-radius: $base-height*6;
+          }
+
+          @include grid-media($small-only) {        
+            width: 100%;
+            text-align: center;
+            margin-top: whitespace(sm);
+          }
+        }
+        &.md{
+            height: $base-height*5;
+            line-height: $base-height*5;
+
+            &.circ{
+              border-radius: $base-height*5;
+            }
+        }
+        &.sm{
+            height: $base-height*4;
+            line-height: $base-height*4;
+
+            &.circ{
+              border-radius: $base-height*4;
+            }
+        }
+
+        // + Reason - reason there because some buttons need to be 100% in responsive.
+        &.resp{
+          width: 100%;
+          @include grid-media($medium-up){
+            width: auto ;
+          }
+        }
+
+
+    // Remove ..
+        &.no-brds{
+            border-radius: 0px;
+        }
+        &.no-line{
+          line-height: inherit ;
+        }
+        &.no-shdw{
+            box-shadow: none ;
+        }
+        &.brds{
+          border-radius: $border;
+        }
+        
+
+
+    // STATS ..
+        &[disabled]{
+            background: colors(cloud) ;
+        }
+
+    // Icons ..
+        &.with-icon{
+          svg, i{
+            float: left;
+            position: relative;
+            margin-right: #{$base-height/2};
+          }
+          &.right-icon{
+              i{
+                margin-right: 0;
+                margin-left: $base-height;
+                float: right;
+              }
+          }
+
+        }
+    
+    // Animated Greadient & icon ..
+    &.arrow{
+      overflow: hidden;
+
+      i{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: block;
+        top: 0px;
+        left: -100%;
+        text-align: center;
+      
+        &:before{
+          width: 100%;
+          text-align: center;
+          height: 100%;
+          display: block;
+          line-height: 60px;
+          color: colors(white);
+        }
+
+      }
+
+      &:before{
+        display: block;
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        background: gr(one);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+      
+      &:hover{
+        background: transparent;
+        span{
+          opacity: 0;
+        }
+        &:before{
+          width: 100%;          
+        }
+        i{
+          left: 0px;
+        }
+      }
+
+      &.lr{
+        i{
+          &:before{
+            line-height: 70px;
+          }
+        }
+      }
+    }
+
+
+    // Circle arrow .. 
+    &.circle{
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      padding: 0px;
+      line-height: 51px;
+
+      &.bg-gr.hvrplay{
+        position: relative;
+
+        &:after, &:before{
+          content: "";
+          height:100%;
+          width: 100%;
+          display: block;
+          position: absolute;
+          z-index: -1;
+          background: gr(two);
+          top: 0px;
+          left: 0px;
+          border-radius: 50%;
+          opacity: 0;
+        }
+
+        &:hover, &.activeplay{
+          &:after{
+            animation: 0.8s counterclockwise infinite; 
+            background: gr(two);
+            opacity: 1;            
+          }
+          &:before{
+            animation: 0.5s clockwise infinite;   
+            background: gr(two); 
+            opacity: 1;            
+          }
+        }
+      }
+
+      i{
+        &:before{
+          font-size: icons-fz(md);          
+        }
+      }
+
+      &.big-icon{
+        i{
+          &:before{
+            font-size: icons-fz(lr);          
+          }
+        }
+      }
+
+      &.lr{
+        height: 70px;
+        width: 70px;
+        line-height: 71px;
+      }
+
+      &.gr-hvr{
+        overflow: hidden ;
+
+        &:before{
+          content: "";
+          height: 100%;
+          width: 100%;
+          display: block;
+          background: gr(one);
+          position: absolute;
+          top: 0px;
+          left: -100%;
+             
+          border-radius: 50%;  
+          z-index: 1;    
+        }
+
+        i{
+          position: relative;
+          z-index: 2;
+        }
+
+        &:hover{
+          i{
+            color: colors(white);
+          }
+          &:before{
+            left: 0px;
+          }
+        }
+      }
+    }
+
+
+    // Vertical Button .. 
+    &.vertical{
+      display: block;
+      position: absolute;
+      right: 0px;
+      border-radius: 5px;
+      height: 600px;
+      width: 30px ;
+      padding: 30px;
+      background: gr(one);
+      color: colors(white);
+      
+      
+
+      &:hover{
+        background: colors(white);
+        i{
+          @extend .txt-gr;          
+        }
+      }
+      
+      i{
+        position: absolute;
+        top: 50%;
+                
+        left: 0px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+    &.full-width{
+      display: block;
+      border-radius: $border;
+      background: gr(three);
+      color: colors(white);
+      
+      
+
+      &:hover{
+        background: colors(white);
+        i{
+          @extend .txt-gr;          
+        }
+      }
+      
+      i{
+                
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+}
+
+
+// Custom buttons .. 
+  // Load More ..
+  .load-more-area, .big-button{
+    margin-top: whitespace(md);
+    margin-bottom: whitespace(xl);
+    padding-bottom: whitespace(lr);
+
+    #link{
+        height: auto;
+        display: block;
+
+
+        #loadmore, #action{
+            display: inline-block;
+            background: colors(brand);
+            color: colors(black);
+            
+            @extend .txt-md;
+            @extend .txt-heading;
+            padding: whitespace(sm);
+            padding-right: #{whitespace(sm)*2};
+            border-radius: $border;
+            transition: wdith 0.3s, font-size 0s;
+
+            &.bg-brand-hvr{    
+              &:hover{
+                background: colors(brand);
+                color: colors(black);
+              }
+            }
+            
+            &.bg-black{    
+              background: colors(black);
+              color: colors(white);
+            }
+
+            &:hover{
+                background: colors(black);
+                color: colors(white);
+            }
+        }
+        .spinner{
+            margin: 0px ;
+            width: 60px;
+            height: 60px;
+            font-size: 0px ;
+            background-color: colors(brand);
+            border-radius: $border;
+            color: colors(brand) ;
+            margin: 100px auto;
+            -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+            animation: sk-rotateplane 1.2s infinite ease-in-out;
+        }
+    }
+}
+
+// Spinner animation ..
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+
+
+
+
+.bigCta{
+  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: top;
+  width: 100%;
+  height: 94px;
+  font-size: 20px;
+  text-align: center !important;
+  background: colors(black);
+      color: white;
+  justify-content: space-around;
+  padding: #{whitespace(sm)*2.5} whitespace(sm);
+}

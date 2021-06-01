@@ -1,0 +1,102 @@
+/* || ===
+
+= Basar Labs 2021
+= EFFECTS CLASSES
+
+=== || */
+
+
+        // Border Radius ..
+            .cir-rdus{
+                border-radius: 100px;
+            }
+            .sm-rdus{
+                border-radius: $border;
+            }
+            .md-rdus{
+                border-radius: $border*2;
+            }
+            .lr-rdus{
+                border-radius: $border*4;
+            }
+
+
+        // Box Shadows ..
+
+            .normal-shdw{
+                box-shadow: shadows(normal);
+            }
+            .dark-shdw{
+                box-shadow: shadows(dark);
+            }
+            .hover-shdw{
+                box-shadow: shadows(hover);
+            }
+            .glow-shdw{
+                box-shadow: shadows(glow);
+            }
+
+
+            // Box Shadows on hovers ..
+
+            .l-shdw-hvr:hover{
+                box-shadow: shadows(normal);
+            }
+            .n-shdw-hvr:hover{
+                box-shadow: shadows(normal);
+            }
+            .n-shdw-hvr:hover{
+                box-shadow: shadows(dark);
+            }
+
+        
+        // Text Shadows ..
+
+            .txt-l-shdw{
+                text-shadow: text-shadows(light);
+            }
+            .txt-n-shdw{
+                text-shadow: text-shadows(normal);
+            }
+            .txt-n-shdw{
+                text-shadow: text-shadows(dark);
+            }
+        
+
+        // Borders ..
+        .border-dashed-left{
+            border-left: 1px dotted colors(cloud);            
+        }
+        .border-dashed-right{
+            border-right: 1px dotted colors(cloud);            
+        }
+
+
+        // Notifications .. 
+        .error, .wpuf-error{
+            background: colors(red);
+            border: none;
+            padding: 20px;
+            color: colors(white);
+            
+            a{
+                color: colors(white);
+                @extend .txt-bold;
+            }
+        }
+
+        .notification, .wpuf-message{
+            background: colors(orange);
+            border: none;
+            padding: 20px;
+            color: colors(white);
+            
+            a{
+                color: colors(white);
+                @extend .txt-bold;
+            }
+        }
+
+        .wpuf-error, .wpuf-message{
+            max-width: 500px;
+        }

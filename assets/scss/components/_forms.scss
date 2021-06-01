@@ -1,0 +1,33 @@
+/* || ===
+
+= Basar Labs 2021
+= FORMS 
+
+=== || */
+
+::placeholder{
+  color: colors(mdblue);
+  opacity: 0.5;
+}
+// Text input
+input:not(.skeleton), textarea{
+    border: colors(black) 2px solid;
+    padding: #{whitespace(sm) * 1.2};
+    border-radius: $border;
+    margin-top: 3px;
+    height: $base-height*6;
+    line-height: $base-height*6;
+    @extend .w100;
+
+    @include grid-media($medium-up){
+      width: 300px;
+    }
+
+    &:hover{
+      border: colors(asphalt) 2px solid;
+    }
+
+    &:focus{
+      border: colors(brand) 2px solid;
+    }
+}

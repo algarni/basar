@@ -1,0 +1,57 @@
+/* || ===
+
+= Basar Labs 2021
+= Qoute Layout 
+
+=== || */
+
+.quote, blockquote{
+    text-align: center;
+    width: 100%;
+    q{
+        &:before, &:after{
+            font-size: lr-fz(md); 
+            line-height: 0px;
+            padding: inherit;
+            display: block;
+            padding: whitespace(md);
+            content:"\201C";
+        }
+        &:after{
+            transform: rotate(180deg);
+            margin-top: -9px;
+        }
+    }
+
+    span{
+        display: block;
+    }
+
+}
+blockquote{
+    margin-top: whitespace(sm);
+    margin-bottom: whitespace(sm);
+    @include grid-media($medium-up){
+        margin-top: whitespace(md);
+        margin-bottom: whitespace(md);
+    }
+    p:first-child{
+        @extend .txt-lr;
+        @extend .txt-heading;
+        line-height: 42px;
+
+        &:before, &:after{
+            font-size: lr-fz(md); 
+            line-height: 0px;
+            padding: inherit;
+            display: block;
+            padding: whitespace(md);
+            content: "c";
+            font-family: fonts(icons);
+        }
+        &:after{
+            transform: rotate(180deg);
+            margin-top: -9px;
+        }
+    }
+}

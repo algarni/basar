@@ -1,0 +1,350 @@
+/* || ===
+
+= Basar Labs 2021
+= MIXINS
+
+=== || */
+
+
+//|| ===
+    // = VER ALIEN
+//|| ===
+
+@mixin middle-layout($align: middle, $zindex: 0, $postion: relative ){
+	display: table;
+	height: 100%;
+
+	.table-cell, .content, .fp-tableCell{
+		display: table-cell;
+		vertical-align:$align;
+		width: 100%;
+			z-index: $zindex;
+			position: $postion;
+	}
+}
+
+@mixin bottom-area(){
+	height: calc(100vh - 80px);
+	display: flex;
+	align-items: flex-end;			
+}
+
+
+//|| ===
+    // = COVER IMAGE
+//|| ===
+
+      @mixin cover-img($url, $color: colors(white)){
+		background: $color url($url) no-repeat  center center ;
+		background-size: cover;
+		background-attachment: fixed;
+      }
+
+			@mixin topbg-img($url, $color){
+				background: $color url($url) no-repeat center top / 100% auto ;
+			}
+
+			@mixin left-img($url, $color: colors(white)){
+				background-image: url($url);
+				background-position: right top;
+				background-size: auto 100%;
+				background-color: $color;
+				background-repeat: no-repeat;
+			}
+
+
+//|| ===
+    // = OPACITY BG
+//|| ===
+
+      @mixin opacity-bg($color: $steel , $opacity: 0.5){
+        background:$color;
+        opacity: $opacity;
+      }
+
+
+
+//|| ===
+    // = Font Render
+//|| ===	  
+
+	  @mixin font-render{-webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;	-moz-osx-font-smoothing: grayscale;}
+
+//|| ===
+    // = RWD Col ..
+//|| ===
+
+@mixin rwdcol($sm: 12, $md: 12, $lr: 12){
+
+	@include grid-column($sm);
+
+	@include grid-media($medium-only){
+		@include grid-column($md);
+	}
+
+	@include grid-media($large-up) {
+		@include grid-column($lr);
+	}
+}
+
+//|| ===
+    // = RWD Padding ..
+//|| ===
+
+	@mixin rwdpadding($sm, $md, $lr){
+		padding:$sm;
+		@include grid-media($medium-only){
+			padding: $md;
+		}
+		@include grid-media($large-up) {
+			padding: $lr;
+		}
+	}
+
+	// Vertical Padding ..
+      @mixin ver-padding($small, $medium, $large, $halfbottom){
+
+						@if $halfbottom == false {
+
+								padding: #{$sm-whitespace*$small} 0px;
+
+								@include grid-media($medium-only){
+									padding: #{$sm-whitespace*$medium} 0px;
+								}
+
+								@include grid-media($large-up) {
+									padding: #{$sm-whitespace*$large} 0px;
+								}
+
+						} @else {
+
+									padding: #{$sm-whitespace*$small} 0px;
+									padding-bottom: #{$sm-whitespace*$small/2};
+
+									@include grid-media($medium-only){
+										padding: #{$sm-whitespace*$medium} 0px;
+										padding-bottom: #{$sm-whitespace*$medium/2};
+
+									}
+
+									@include grid-media($large-up) {
+										padding: #{$sm-whitespace*$large} 0px;
+										padding-bottom: #{$sm-whitespace*$large/2};
+									}
+
+								}
+
+						}
+
+
+			// Horizontal Padding ..
+			@mixin hor-padding($small, $medium, $large){
+
+						padding:0px #{$sm-whitespace*$small};
+
+						@include grid-media($medium-only){
+							padding: 0px #{$sm-whitespace*$medium};
+						}
+
+						@include grid-media($large-up) {
+							padding: 0px #{$sm-whitespace*$large};
+						}
+
+			}
+
+			// Borders Padding ..
+			@mixin all-padding($smallver, $smallhor, $mediumver, $mediumhor, $largever, $largehor){
+						padding: #{$sm-whitespace*$smallhor} #{$sm-whitespace*$smallver};
+
+						@include grid-media($medium-only){
+							padding: #{$sm-whitespace*$mediumhor} #{$sm-whitespace*$mediumver};
+				}
+
+						@include grid-media($large-up) {
+							padding: #{$sm-whitespace*$largehor} #{$sm-whitespace*$largever};
+				}
+			}
+
+			// Global Padding ..
+			@mixin global-padding(){
+				padding:$sm-whitespace*2;
+
+				@include grid-media($medium-up){
+					padding: $sm-whitespace*6;
+				}
+
+				@include grid-media($large-up) {
+					padding: $sm-whitespace*12;
+				}
+			}
+
+
+//|| ===
+    // = RWD Margin ..
+//|| ===
+
+@mixin rwdmargin($sm, $md, $lr){
+	margin:$sm;
+	@include grid-media($medium-only){
+		margin: $md;
+	}
+	@include grid-media($large-up) {
+		margin: $lr;
+	}
+}
+
+// Vertical Padding ..
+  @mixin ver-margin($small, $medium, $large, $halfbottom){
+
+					@if $halfbottom == false {
+
+						margin: #{$sm-whitespace*$small} 0px;
+
+							@include grid-media($medium-only){
+								margin: #{$sm-whitespace*$medium} 0px;
+							}
+
+							@include grid-media($large-up) {
+								margin: #{$sm-whitespace*$large} 0px;
+							}
+
+					} @else {
+
+						margin: #{$sm-whitespace*$small} 0px;
+						margin-bottom: #{$sm-whitespace*$small/2};
+
+								@include grid-media($medium-only){
+									margin: #{$sm-whitespace*$medium} 0px;
+									margin-bottom: #{$sm-whitespace*$medium/2};
+
+								}
+
+								@include grid-media($large-up) {
+									margin: #{$sm-whitespace*$large} 0px;
+									margin-bottom: #{$sm-whitespace*$large/2};
+								}
+
+							}
+
+					}
+
+
+		// Horizontal Padding ..
+		@mixin hor-margin($small, $medium, $large, $halfbottom){
+
+			margin:0px #{$sm-whitespace*$small};
+
+					@include grid-media($medium-only){
+						margin: 0px #{$sm-whitespace*$medium};
+					}
+
+					@include grid-media($large-up) {
+						margin: 0px #{$sm-whitespace*$large};
+					}
+
+		}
+
+		// Borders Padding ..
+		@mixin all-margin($smallver, $smallhor, $mediumver, $mediumhor, $largever, $largehor){
+			margin: #{$sm-whitespace*$smallhor} #{$sm-whitespace*$smallver};
+
+					@include grid-media($medium-only){
+						margin: #{$sm-whitespace*$mediumhor} #{$sm-whitespace*$mediumver};
+			}
+
+					@include grid-media($large-up) {
+						margin: #{$sm-whitespace*$largehor} #{$sm-whitespace*$largever};
+			}
+		}
+
+		// Global Padding ..
+		@mixin global-margin(){
+			margin:$sm-whitespace*2;
+
+			@include grid-media($medium-up){
+				margin: $sm-whitespace*6;
+			}
+
+			@include grid-media($large-up) {
+				margin: $sm-whitespace*12;
+			}
+		}			
+
+
+
+//|| ===
+    // = Animation ..
+//|| ===
+
+	    @mixin transition($time: 0.5s) {
+	        transition: all $time;
+	    }
+
+
+//|| ===
+    // = Scale ..
+//|| ===
+
+			@mixin scale($val, $origin, $inline){
+					position: relative;
+					transform: scale($val);
+					transform-origin: $origin;
+					@if $inline == true {
+						display: inline-block;
+					}
+			}
+
+
+//|| ===
+    // = Easy Selectors ..
+//|| ===
+
+
+		@mixin odd(){
+			&:nth-child(odd) {
+				@content
+			}
+		}
+
+		@mixin even(){
+			&:nth-child(even) {
+			  @content
+			}
+		}
+
+		@mixin first($num) {
+
+			@if $num == 1 {
+			  &:first-child {
+				@content;
+			  }
+			}
+		  
+			@else {
+			  &:nth-child(-n + #{$num}) {
+				@content;
+			  }
+			}
+		  }
+
+
+
+//|| ===
+    // = Animation ..
+//|| ===
+
+	@mixin placeholder($color: colors(black)) {
+
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: $color;
+			opacity: 0.5; /* Firefox */
+		}
+
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: $color;
+		}
+
+		::-ms-input-placeholder { /* Microsoft Edge */
+			color: $color;
+		}
+	}

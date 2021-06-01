@@ -1,0 +1,89 @@
+/* || ===
+
+= Basar Labs 2021
+= PRE-DEFINDED FOUNDATION GRID CLASSES
+
+=== || */
+
+.grid{
+    display: inline-block;
+    width: 100%;
+}
+
+.col{
+    position: relative;
+    
+    // SM Classes ..
+    &.sm-1{ @include grid-column(1); }
+    &.sm-2{ @include grid-column(2); }
+    &.sm-3{ @include grid-column(3); }
+    &.sm-4{ @include grid-column(4); }
+    &.sm-5{ @include grid-column(5); }
+    &.sm-6{ @include grid-column(6); }
+    &.sm-7{ @include grid-column(7); }
+    &.sm-8{ @include grid-column(8); }
+    &.sm-9{ @include grid-column(9); }
+    &.sm-10{ @include grid-column(10); }
+    &.sm-11{ @include grid-column(11); }
+    &.sm-12{ @include grid-column(12); }
+
+    // MD Classes
+    @include breakpoint(medium) {        
+        &.md-1{ @include grid-column(1); }
+        &.md-2{ @include grid-column(2); }
+        &.md-3{ @include grid-column(3); }
+        &.md-4{ @include grid-column(4); }
+        &.md-5{ @include grid-column(5); }
+        &.md-6{ @include grid-column(6); }
+        &.md-7{ @include grid-column(7); }
+        &.md-8{ @include grid-column(8); }
+        &.md-9{ @include grid-column(9); }
+        &.md-10{ @include grid-column(10); }
+        &.md-11{ @include grid-column(11); }
+        &.md-12{ @include grid-column(12); }
+    }
+
+    // LR Classes
+    @include breakpoint(large) {        
+        &.lr-1{ @include grid-column(1); }
+        &.lr-2{ @include grid-column(2); }
+        &.lr-3{ @include grid-column(3); }
+        &.lr-4{ @include grid-column(4); }
+        &.lr-5{ @include grid-column(5); }
+        &.lr-6{ @include grid-column(6); }
+        &.lr-7{ @include grid-column(7); }
+        &.lr-8{ @include grid-column(8); }
+        &.lr-9{ @include grid-column(9); }
+        &.lr-10{ @include grid-column(10); }
+        &.lr-11{ @include grid-column(11); }
+        &.lr-12{ @include grid-column(12); }
+    }
+
+    // XL Classes
+    @include breakpoint(large) {        
+        &.xl-1{ @include grid-column(1); }
+        &.xl-2{ @include grid-column(2); }
+        &.xl-3{ @include grid-column(3); }
+        &.xl-4{ @include grid-column(4); }
+        &.xl-5{ @include grid-column(5); }
+        &.xl-6{ @include grid-column(6); }
+        &.xl-7{ @include grid-column(7); }
+        &.xl-8{ @include grid-column(8); }
+        &.xl-9{ @include grid-column(9); }
+        &.xl-10{ @include grid-column(10); }
+        &.xl-11{ @include grid-column(11); }
+        &.xl-12{ @include grid-column(12); }
+    }
+    
+}
+
+/* || ===
+
+= MOHA.STUDIO
+= ACTIVATE FOUNDATION CLASSES
+
+=== || */
+
+@include foundation-visibility-classes;
+//@include foundation-forms;
+@include foundation-accordion;

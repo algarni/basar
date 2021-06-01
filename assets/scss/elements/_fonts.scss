@@ -1,0 +1,44 @@
+/* || ===
+
+= Basar Labs 2021
+= FONTS
+
+=== || */
+
+
+// IBM Plex - Light 
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic-Light.eot');
+    src: url('../fonts/IBMPlexSansArabic-Light.woff2') format('woff2'),
+        url('../fonts/IBMPlexSansArabic-Light.woff') format('woff'),
+        url('../fonts/IBMPlexSansArabic-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+// IBM Plex - Medium 
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic-Medium.eot');
+    src: url('../fonts/IBMPlexSansArabic-Medium.woff2') format('woff2'),
+        url('../fonts/IBMPlexSansArabic-Medium.woff') format('woff'),
+        url('../fonts/IBMPlexSansArabic-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+// IBM Plex - Bold 
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic-bold.eot');
+    src: url('../fonts/IBMPlexSansArabic-bold.woff2') format('woff2'),
+        url('../fonts/IBMPlexSansArabic-bold.woff') format('woff'),
+        url('../fonts/IBMPlexSansArabic-bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

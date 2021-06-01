@@ -1,0 +1,272 @@
+/* || ===
+
+= Basar Labs 2021
+= LIST
+
+=== || */
+
+
+.list{
+
+  &.ol{
+    list-style: decimal;
+    padding-left: whitespace(sm);
+  }
+  // circle list
+  .circle{
+    text-align: right;
+    padding-right: 0px;
+    list-style: none;
+    line-height: 32px;
+    &.black{
+      li{
+        color: colors(silver);
+        &:before{
+          border-color: colors(silver);
+        }
+      }
+    }
+    li{
+      font-size: sm-x(sm)+0.1rem;
+      color: colors(white);
+      &:before {
+          content: '';
+          height: 8px;
+          position: relative;
+          top: 15px;
+          width: 8px;
+          display: block;
+          float: right;
+          border-radius: 50%;
+          border: 2px solid colors(white);
+          margin-left: 10px;
+      }
+    }
+  }
+}
+
+.inline-list{
+  li{
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+.list-line{
+  li{
+    line-height: 40px;
+  }
+}
+
+
+ul.default{
+  li{
+    a{
+      display: block;
+      background: colors(cloud);
+      height: $base-height*6;
+      @extend .txt-md;
+      font-weight: weight(bold);
+      display: flex;
+      align-items: center;
+      border-radius: $default-radius;
+      margin-bottom: $base-height;
+      color: colors(black);
+      padding: 0 20px;
+      box-shadow: inset 0px 0px 0px 3px transparent;
+      &:hover{
+        transition: all 0.5s;
+        box-shadow: inset 0px 0px 0px 100px colors(black);
+        color: white;
+      }
+    }
+    
+  }
+
+
+}
+
+
+// Categories ..
+.cats{
+  margin-left: padding(sm)*2;
+  width: calc(100% - #{padding(sm)*2});
+  ul{
+    display: flex; /* displays flex-items (children) inline */
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0px;  /* Remove scrollbar space */
+      background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+  
+    li{
+      flex: 0 0 auto; /* doesn't grow nor shrink */
+      position: relative;
+      margin: 0px;
+      &:after{
+        background: colors(cloud);   
+        height: 22px;
+        content: '';
+        width: 1px;
+        position: absolute;
+        right: -1px;
+        top: calc(50% - 10px);
+      }
+      &.active, &.is-active{
+        a{
+          @extend .bg-cloud;
+          @extend .circ;
+          span{
+            border: 2px solid colors(black);
+            font-weight: 600;
+            color: colors(black);
+          }
+
+        }
+        &:after{
+          display: none;
+        }        
+      }
+      /* item */
+      a{
+        @extend .btn;
+        @extend .md;
+        @extend .txt-black;
+        @extend .txt-sm;
+        span{
+          background: colors(cloud);
+          display: inline-block;
+          font-size: 12px;
+          line-height: 1;
+          padding: 3px 6px;
+          border-radius: 10px;
+          margin-left: 7px;
+          color: colors(asphalt);
+          position: relative;
+          top: 1px;
+        }
+      }
+
+
+
+    }
+  }
+}
+
+
+.rating{
+  li{
+    margin: 0 -2px;
+    &.number{
+      margin-left: 3px;
+    }
+  }
+}
+
+
+.options{
+  margin-left: padding(sm)*2;
+  width: calc(100% - #{padding(sm)*2});
+  ul{
+    display: flex; /* displays flex-items (children) inline */
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0px;  /* Remove scrollbar space */
+      background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+  
+    li{
+      flex: 0 0 auto; /* doesn't grow nor shrink */
+      position: relative;
+      margin: 0px;
+      &:after{
+        background: colors(cloud);   
+        height: 22px;
+        content: '';
+        width: 1px;
+        position: absolute;
+        right: -1px;
+        top: calc(50% - 10px);
+      }
+      &.active{
+        a{
+          @extend .bg-cloud;
+        }
+        &:after{
+          display: none;
+        }        
+      }
+      /* item */
+      a{
+        @extend .btn;
+        @extend .md;
+        @extend .txt-black;
+        @extend .txt-xs;
+
+      }
+
+
+
+    }
+  }
+}
+
+
+
+
+.weeklyDatePicker{
+  margin-left: padding(sm)*2;
+  width: calc(100% - #{padding(sm)*2});
+  ul{
+    display: flex; /* displays flex-items (children) inline */
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0px;  /* Remove scrollbar space */
+      background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    width: 100%;
+  
+    li{
+      flex: 0 0 auto; /* doesn't grow nor shrink */
+      position: relative;
+      margin: 0px #{$sm-padding * 3} 0 0 ;
+      // background: red;
+      // color: colors(asphalt);
+      &.disabled{
+        h3, span{
+          opacity: 0.3;
+        }
+      }
+      input{
+        display: none;
+      }
+      .singleDay:checked + label{
+        background: rgba(75, 203, 65, 0.15);
+      }
+      label{
+        padding: #{padding(sm) * 2} #{padding(sm) * 2.5};
+        display: block;
+        background: white;
+        border-radius: $default-radius;
+        transition: 0.2s all;
+        &:after{
+          border-radius: 10px;
+          height: 8px;
+          width: 8px;
+          display: inline-block;
+          content: '';
+
+        }
+      }
+
+      .available:after{
+        background: colors(green);
+      }
+      .busy::after{
+        background: colors(red);
+      }
+
+
+
+    }
+  }
+}

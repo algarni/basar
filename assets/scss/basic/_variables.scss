@@ -1,0 +1,310 @@
+/* || ===
+
+= Basar Labs 2021
+= APP CUSTOM STYLE
+
+=== || */
+
+
+
+        // == COLORS == //
+            
+            // Theme ..
+            $colors: (
+                brand   : #19AF94,
+                brand2  : #5862CA,
+                cloud   : #F8F9F9,
+                silver  : #EDEFF0,
+                asphalt : #5B6268,
+                mdblue  : #32304D,
+                black   : #090817 ,
+                white   : #fff,
+                // Status ..
+                green   : #86C282,
+                orange  : #EE7348,
+                red     : #C82A27,
+                yellow  : #FADD60
+            );
+
+
+                // Function ..
+                @function colors($key) {
+                        @if map-has-key($colors, $key) {
+                                @return map-get($colors, $key);
+                        }
+
+                        @warn "Unknown `#{$key}` in $colors.";
+                        @return null;
+                }
+
+
+
+            // social colors ..
+            $social: (
+                facebook:#3b5998,
+                twitter: #55acee,
+                behance: #1769ff,
+                google:  #dd4b39,
+                linked:  #007bb5,
+                dribbble:#ea4c89,
+                instegram:#D32557,
+                whatsapp: #4dc247,
+                pinterest:#BD081C
+            );
+
+                // Function ..
+                @function social($key) {
+                        @if map-has-key($social, $key) {
+                                @return map-get($social, $key);
+                        }
+
+                        @warn "Unknown `#{$key}` in $social.";
+                        @return null;
+                }
+
+
+
+            $overlay: (
+                black: rgba(0, 0, 0, 0.61),
+                white: rgba(255, 255, 255, 0.81)
+            );
+
+                // Function ..
+                @function overlay($key) {
+                        @if map-has-key($overlay, $key) {
+                                @return map-get($overlay, $key);
+                        }
+
+                        @warn "Unknown `#{$key}` in $overlay.";
+                        @return null;
+                }
+
+
+
+
+        // == SPACING == //
+        $sm-whitespace : 1rem;
+        $base-height   : 0.325rem;
+
+                // Whitespace ..
+                $whitespace:(
+                    sm: $sm-whitespace,
+                    md: $sm-whitespace*1.5,
+                    lr: $sm-whitespace*3,
+                    xl: $sm-whitespace*4,
+                    xxl: $sm-whitespace*4.5
+                );
+
+                        // Function ..
+                        @function whitespace($key) {
+                                @if map-has-key($whitespace, $key) {
+                                        @return map-get($whitespace, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $whitespace.";
+                                @return null;
+                        }
+
+                        
+                // other vals ..
+                $border        : 0.1563rem*4;
+                $base-height   : 0.625rem;
+                $base-group    : $base-height*4;
+
+                        // border radius ..
+                        $default-radius: 0.625rem;
+                        $box-radius: 0;
+
+
+
+        // == SHADOW == //
+
+                // Box Shaodws ..
+                $shadows:(
+                    normal:  10px 10px 20px rgba(0, 0, 0, 0.04),
+                    dark: 0px 4px 10px rgba(0, 0, 0, 0.15),
+                    hover: 0 30px 50px -30px rgba(31,36,48,.1),
+                    glow: 0px 15px 20px rgba(19, 19, 20, 0.05)
+                );
+
+
+                        // Function ..
+                        @function shadows($key) {
+                                @if map-has-key($shadows, $key) {
+                                        @return map-get($shadows, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $shadows.";
+                                @return null;
+                        }
+                        
+                        
+                // Text Shadows ..
+                $text-shadows:(
+                    light:  5px 10px 30px rgba(0,0,0,0.09),
+                    normal: 0 9px 16px rgba(0,0,0,0.09),
+                    dark: 5px 10px 30px rgba(0,0,0,0.1)
+                );
+  
+                        // Function ..
+                        @function text-shadows($key) {
+                                @if map-has-key($text-shadows, $key) {
+                                        @return map-get($text-shadows, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $shadows.";
+                                @return null;
+                        }
+
+
+        // == GREADIENTS == //
+                // Greadients ..
+                $greadient:(
+                        one: linear-gradient(133deg, #FDDB60 0%, #FDDB60 52%, #5B25B2 52%, #5B25B2 100%, #5B25B2 100%, #5B25B2 100%),
+                        two: linear-gradient(90deg ,#fff 0%, #fff 50%, rgba(255,255,255,0) 100%),
+                        three: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 50%, #fff 100%),
+                        four: linear-gradient(0deg, rgba(255,255,255,0) 0%, #fff 30%, #fff 100%),
+                );
+
+                        // Function ..
+                        @function gr($key) {
+                                @if map-has-key($greadient, $key) {
+                                        @return map-get($greadient, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $greadient.";
+                                @return null;
+                        }                
+
+                // Effects .. 
+                $effects:(
+                    one: linear-gradient(30deg, rgba(194,115,200,0.00) 49%, rgba(146,66,154,0.95) 97%, #8F3F97 100%),
+                    two: linear-gradient(-36deg, rgba(194,115,200,0.50) 0%, rgba(143,63,151,0.00) 100%)
+                );
+
+                        // Function ..
+                        @function effects($key) {
+                                @if map-has-key($effects, $key) {
+                                        @return map-get($effects, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $effects.";
+                                @return null;
+                        }   
+                
+
+        // == FONTS == //
+                $font-size:(
+                        xxs : 12px,
+                        xs : 14px,
+                        sm : 16px,
+                        md : 18px,
+                        lr : 22px,
+                        xl : 26px,
+                        xxl: 84px
+                );
+
+                        // Function ..
+                        @function font-size($key) {
+                                @if map-has-key($font-size, $key) {
+                                        @return map-get($font-size, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $font-size.";
+                                @return null;
+                        } 
+
+                // Icons Size ..
+                $icons-fz:(
+                    sm : 22px,
+                    md : 28px,
+                    lr : 32px,
+                    xl : 46px,
+                    xxl: 56px
+
+                );
+
+                        // Function ..
+                        @function icons-fz($key) {
+                                @if map-has-key($icons-fz, $key) {
+                                        @return map-get($icons-fz, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $icons-fz.";
+                                @return null;
+                        }  
+
+
+                // font family ..
+                $fonts:(
+                    heading: 'IBM Plex Sans Arabic',
+                    normal: 'IBM Plex Sans Arabic',
+                    icons: 'Basar-Icons'
+                );
+
+                        // Function ..
+                        @function fonts($key) {
+                                @if map-has-key($fonts, $key) {
+                                        @return map-get($fonts, $key);
+                                }
+
+                                @warn "Unknown `#{$key}` in $fonts.";
+                                @return null;
+                        }  
+
+                // font weight ..
+                $weight:(
+                        heading: 600,
+                        bold: 600,
+                        medium: 500,
+                        normal: 400,
+                        icons: 300
+                        );
+
+                                // Function ..
+                                @function weight($key) {
+                                        @if map-has-key($weight, $key) {
+                                                @return map-get($weight, $key);
+                                        }
+
+                                        @warn "Unknown `#{$key}` in $fonts.";
+                                        @return null;
+                                }          
+                
+                
+        // == Grid BreakPoints == //
+        $neat-grid: (
+                columns: 12,
+                gutter: 0px,
+        );
+
+        $small-only: (
+                columns: 12,
+                gutter: 0px,
+                media: "screen and (max-width: 39.9375em)",
+        );
+
+        $medium-up: (
+                columns: 12,
+                gutter: 0px,
+                media: "screen and (min-width: 40em)",
+        );
+
+        $medium-only: (
+                columns: 12,
+                gutter: 0px,
+                media: "screen and (min-width: 40em) and (max-width: 65em)",
+        );
+
+        $large-up: (
+                columns: 12,
+                gutter: 0px,
+                media: "screen and (min-width: 65em)",
+        );
+
+
+        $large-only: (
+                columns: 12,
+                gutter: 0px,
+                media: "screen and (min-width: 66em) and (max-width: 74.9375em)",
+        );

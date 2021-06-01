@@ -1,0 +1,21 @@
+/* || ===
+
+= Basar Labs 2021
+= TOOLTIP
+
+=== || */
+
+.ttip:hover .ttipc {
+  display: block;
+  color: black;
+}
+
+.ttipc {
+  position: absolute;
+  white-space: nowrap;
+  display: none;
+  background: #ffffcc;
+  border: 1px solid black;
+  padding: 5px;
+  z-index: 1000;
+}
